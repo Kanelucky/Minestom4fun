@@ -1,4 +1,6 @@
-![icon.png](src/main/resources/icon.png)
+<p align="center">
+  <img src="src/main/resources/icon.png" alt="icon" />
+</p>
 <h1 align="center">
     Minestom4fun
 

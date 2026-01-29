@@ -1,4 +1,4 @@
-![icon_640x640.png](src/main/resources/icon_640x640.png)
+![icon.png](src/main/resources/icon.png)
 <h1 align="center">
     Minestom4fun
 

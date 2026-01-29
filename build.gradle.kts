@@ -1,19 +1,22 @@
 plugins {
     kotlin("jvm") version "2.3.0"
     id("com.gradleup.shadow") version "9.3.1"
+    kotlin("plugin.serialization") version "2.3.0"
 }
 
 group = "org.kanelucky"
-version = "0.1.0"
+version = "0.1.1"
 
 
 dependencies {
     testImplementation(kotlin("test"))
 
     implementation("org.slf4j:slf4j-api:2.0.17")
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.24")
+    implementation("ch.qos.logback:logback-classic:1.5.24")
 
-    implementation("net.minecrell:terminalconsoleappender:1.3.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+
+    implementation("org.snakeyaml:snakeyaml-engine:2.7")
 
     implementation("net.minestom:minestom:2026.01.08-1.21.11")
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")
@@ -40,6 +43,8 @@ tasks {
     jar {
         manifest {
             attributes["Main-Class"] = "org.kanelucky.Minestom4fun"
+            attributes["Implementation-Version"] = project.version
+            attributes["Implementation-Title"] = "Minestom4fun"
         }
     }
 
@@ -50,6 +55,21 @@ tasks {
         mergeServiceFiles()
         archiveClassifier.set("")
     }
+}
+
+tasks.register<JavaExec>("runServer") {
+    group = "application"
+    description = "Run Minecraft Server"
+
+    mainClass.set("org.kanelucky.Minestom4fun")
+    classpath = sourceSets["main"].runtimeClasspath
+
+    jvmArgs(
+        "-Xms1G",
+        "-Xmx2G"
+    )
+
+    workingDir = file("run")
 }
 
 tasks.test {

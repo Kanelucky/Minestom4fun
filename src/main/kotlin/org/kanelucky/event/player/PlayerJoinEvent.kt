@@ -6,7 +6,7 @@ import net.minestom.server.event.player.PlayerSpawnEvent
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer
+import net.minestom.server.MinecraftServer.LOGGER
 
 object PlayerJoinEvent {
     @JvmStatic
@@ -17,17 +17,14 @@ object PlayerJoinEvent {
                 if (!event.isFirstSpawn) return@addListener
 
                 val player: Player = event.player
-                val playerName = player.username
 
                 val msg = Component.text()
                     .append(Component.text("[Event/Player] ", NamedTextColor.YELLOW))
-                    .append(Component.text(playerName, NamedTextColor.WHITE))
-                    .append(Component.text(" joined the game", NamedTextColor.WHITE))
+                    .append(Component.text(player.username))
+                    .append(Component.text(" joined the game"))
                     .build()
 
-                println(
-                    PlainTextComponentSerializer.plainText().serialize(msg)
-                )
+                LOGGER.info(msg)
 
                 MinecraftServer.getConnectionManager().onlinePlayers.forEach { it.sendMessage(msg) }
             }

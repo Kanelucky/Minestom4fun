@@ -4,8 +4,10 @@ import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
 import dev.rollczi.litecommands.annotations.execute.Execute
+
 import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.Player
+
 
 @Command(name = "gamemode", aliases = ["gm"])
 class GameModeCommand {
@@ -24,6 +26,7 @@ class GameModeCommand {
         @Arg mode: GameMode,
         @Arg target: Player
     ) {
+
         target.setGameMode(mode)
 
         target.sendMessage("§aYour GameModeCommand has been set to §e" + mode.name)

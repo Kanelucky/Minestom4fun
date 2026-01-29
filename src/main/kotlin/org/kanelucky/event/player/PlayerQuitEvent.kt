@@ -1,12 +1,11 @@
 package org.kanelucky.event.player
 
-import net.minestom.server.MinecraftServer
-import net.minestom.server.entity.Player
-import net.minestom.server.event.player.PlayerSpawnEvent
-
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer
+
+import net.minestom.server.MinecraftServer
+import net.minestom.server.entity.Player
+import net.minestom.server.MinecraftServer.LOGGER
 import net.minestom.server.event.player.PlayerDisconnectEvent
 
 object PlayerQuitEvent {
@@ -16,17 +15,14 @@ object PlayerQuitEvent {
             .addListener(PlayerDisconnectEvent::class.java) { event ->
 
                 val player: Player = event.player
-                val playerName = player.username
 
                 val msg = Component.text()
                     .append(Component.text("[Event/Player] ", NamedTextColor.YELLOW))
-                    .append(Component.text(playerName, NamedTextColor.WHITE))
-                    .append(Component.text(" left the game", NamedTextColor.WHITE))
+                    .append(Component.text(player.username))
+                    .append(Component.text(" left the game"))
                     .build()
 
-                println(
-                    PlainTextComponentSerializer.plainText().serialize(msg)
-                )
+                LOGGER.info(msg)
 
                 MinecraftServer.getConnectionManager().onlinePlayers.forEach { it.sendMessage(msg) }
             }

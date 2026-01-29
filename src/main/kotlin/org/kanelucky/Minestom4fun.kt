@@ -22,13 +22,14 @@ object Minestom4fun {
 
     @JvmStatic
     fun main() {
-        // Initialization
+
         minecraftServer = MinecraftServer.init()
 
         val instanceManager = MinecraftServer.getInstanceManager()
         instanceContainer = instanceManager.createInstanceContainer()
 
         instanceContainer.setGenerator(OverworldGenerator())
+
         globalEventHandler = MinecraftServer.getGlobalEventHandler()
 
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent::class.java) { event ->
@@ -44,9 +45,8 @@ object Minestom4fun {
         CommandRegistry.initialize()
 
         MinestomPvP.init()
-
-        val modernVanilla = CombatFeatures.modernVanilla()
-        MinecraftServer.getGlobalEventHandler().addChild(modernVanilla.createNode())
+        val modern = CombatFeatures.modernVanilla()
+        MinecraftServer.getGlobalEventHandler().addChild(modern.createNode())
 
         minecraftServer.start("0.0.0.0", 25565)
     }

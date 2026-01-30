@@ -1,0 +1,35 @@
+name: Build Minestom4fun
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew shadowJar
+
+      - name: Upload jar artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Minestom4fun-jar
+          path: build/libs/*.jar

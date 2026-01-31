@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: 25
 
       - name: Make gradlew executable
         run: chmod +x gradlew
@@ -31,5 +31,5 @@ jobs:
       - name: Upload jar artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Minestom4fun-jar
+          name: minestom4fun-server
           path: build/libs/*.jar

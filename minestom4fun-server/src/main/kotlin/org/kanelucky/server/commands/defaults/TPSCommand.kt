@@ -3,6 +3,7 @@ package org.kanelucky.server.commands.defaults
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
 import dev.rollczi.litecommands.annotations.execute.Execute
+import dev.rollczi.litecommands.annotations.permission.Permission
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -16,6 +17,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
  * @author Kanelucky
  */
 @Command(name = "tps")
+@Permission("minestom4fun.commands.defaults.tps")
 class TPSCommand {
     @Execute
     fun execute(@Context sender: CommandSender) {

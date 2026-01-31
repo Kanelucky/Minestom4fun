@@ -4,6 +4,7 @@ import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
 import dev.rollczi.litecommands.annotations.execute.Execute
+import dev.rollczi.litecommands.annotations.permission.Permission
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -18,6 +19,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
  * @author Kanelucky
  */
 @Command(name = "gamemode", aliases = ["gm"])
+@Permission("minestom4fun.commands.defaults.gamemode")
 class GameModeCommand {
     @Execute
     fun self(

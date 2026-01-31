@@ -2,6 +2,7 @@ package org.kanelucky.server
 
 import io.github.togar2.pvp.MinestomPvP
 import io.github.togar2.pvp.feature.CombatFeatures
+
 import net.hollowcube.polar.PolarLoader
 
 import net.minestom.server.MinecraftServer
@@ -13,7 +14,7 @@ import org.kanelucky.server.event.EventRegistry
 import org.kanelucky.server.network.status.ServerListPing
 import org.kanelucky.server.terminal.ServerTerminalConsole
 import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatGenerator
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.SnowyKingdom
+import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.BottomlessPit
 
 import java.nio.file.Files
 import java.nio.file.Path
@@ -41,7 +42,8 @@ object Minestom4fun {
         val polarPath = Path.of("worlds/world.polar")
         instanceContainer.setChunkLoader(PolarLoader(polarPath))
 
-        instanceContainer.setGenerator(SuperFlatGenerator(SnowyKingdom()))
+        // Set the ChunkGenerator
+        instanceContainer.setGenerator(SuperFlatGenerator(BottomlessPit()))
 
         globalEventHandler = MinecraftServer.getGlobalEventHandler()
 

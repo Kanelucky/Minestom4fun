@@ -13,10 +13,11 @@ This file documents the evolution of Minestom4fun during the 0.1.x series.
 ## 0.1.2 - 2026-1-31
 ### Commands
   - Add /tps command
-    
+    ![TPSCommand](changelogs/0.1.x/picture/0.1.2_TPSCommand.png)
 ### Network
   - #### Status
     - Add ServerListPing.kt 
+        ![0.1.2_ServerListPing.png](picture/0.1.2_ServerListPing.png)
 ### Text
   - #### Prefix
     - Add **commands** and **event** folder

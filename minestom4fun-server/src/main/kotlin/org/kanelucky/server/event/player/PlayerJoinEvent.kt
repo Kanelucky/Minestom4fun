@@ -1,4 +1,4 @@
-package org.kanelucky.event.player
+package org.kanelucky.server.event.player
 
 import net.kyori.adventure.text.Component
 
@@ -7,7 +7,7 @@ import net.minestom.server.MinecraftServer
 import net.minestom.server.entity.Player
 import net.minestom.server.event.player.PlayerSpawnEvent
 
-import org.kanelucky.text.prefix.event.player.PlayerEventPrefix
+import org.kanelucky.server.text.prefix.event.player.PlayerEventPrefix
 
 /**
  * @author Kanelucky

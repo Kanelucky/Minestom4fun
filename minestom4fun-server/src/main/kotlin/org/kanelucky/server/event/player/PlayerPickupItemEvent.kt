@@ -1,4 +1,4 @@
-package org.kanelucky.event.player
+package org.kanelucky.server.event.player
 
 import net.minestom.server.entity.Player
 import net.minestom.server.event.Event
@@ -19,8 +19,11 @@ object PlayerPickupItemEvent {
         node.addListener<PickupItemEvent>(PickupItemEvent::class.java, Consumer { event: PickupItemEvent? ->
             val itemStack = event!!.getItemStack()
             if (event.livingEntity is Player) {
+
                 val player = event.livingEntity as Player
+
                 player.inventory.addItemStack(itemStack)
+
             }
         })
 

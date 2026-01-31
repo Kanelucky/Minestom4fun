@@ -1,4 +1,4 @@
-package org.kanelucky.event.player
+package org.kanelucky.server.event.player
 
 import net.minestom.server.entity.ItemEntity
 import net.minestom.server.event.EventFilter
@@ -18,17 +18,24 @@ object PlayerDropItemEvent {
             EventNode.type("player-drop-item", EventFilter.PLAYER)
 
         playerNode.addListener(ItemDropEvent::class.java) { event ->
+            val player = event.player
+
+            val playerPos = player.position
+            val direction = playerPos.direction()
+
+            val spawnPos = playerPos
+                .add(0.0, player.eyeHeight.toDouble(), 0.0)
+                .add(direction.mul(0.3))
+
+            val velocity = direction.mul(4.0)
 
             val itemEntity = ItemEntity(event.itemStack)
-            itemEntity.setInstance(event.instance, event.player.position)
-            itemEntity.setVelocity(
-                event.player.position
-                    .add(0.0, 1.0, 0.0)
-                    .direction()
-                    .mul(6.0)
-            )
+
+            itemEntity.setInstance(event.instance, spawnPos)
+            itemEntity.setVelocity(velocity)
             itemEntity.setPickupDelay(Duration.ofMillis(500))
         }
+
         return playerNode
     }
 }

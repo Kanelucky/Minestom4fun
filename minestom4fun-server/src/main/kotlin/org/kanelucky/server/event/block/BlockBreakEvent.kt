@@ -1,4 +1,4 @@
-package org.kanelucky.event.block
+package org.kanelucky.server.event.block
 
 import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.ItemEntity
@@ -19,17 +19,25 @@ object BlockBreakEvent {
         val node = EventNode.all("block-drop-on-break")
 
         node.addListener(PlayerBlockBreakEvent::class.java) { event ->
+
             val player = event.player
+
             if (player.gameMode == GameMode.CREATIVE) return@addListener
+
             event.block.registry()?.material()?.let { material ->
+
                 val itemEntity = ItemEntity(ItemStack.of(material))
+
                 itemEntity.setPickupDelay(Duration.ofMillis(500))
+
                 itemEntity.setInstance(
                     event.instance,
                     event.blockPosition.add(0.5, 0.5, 0.5)
                 )
+
             }
         }
+
         return node
     }
 }

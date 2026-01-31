@@ -1,4 +1,4 @@
-package org.kanelucky.text.prefix.event.player
+package org.kanelucky.server.text.prefix.event.player
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor

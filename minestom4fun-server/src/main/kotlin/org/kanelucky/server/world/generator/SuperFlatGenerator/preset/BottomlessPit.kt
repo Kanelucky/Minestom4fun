@@ -1,7 +1,7 @@
-package org.kanelucky.world.generator.SuperFlatGenerator.preset
+package org.kanelucky.server.world.generator.SuperFlatGenerator.preset
 
-import org.kanelucky.world.generator.SuperFlatGenerator.Layer
-import org.kanelucky.world.generator.SuperFlatGenerator.SuperFlatPreset
+import org.kanelucky.server.world.generator.SuperFlatGenerator.Layer
+import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatPreset
 
 import net.minestom.server.instance.block.Block
 import net.minestom.server.world.biome.Biome

@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.kanelucky"
-version = "0.1.1"
+version = "0.1.2"
 
 
 dependencies {
@@ -20,6 +20,8 @@ dependencies {
 
     implementation("net.minestom:minestom:2026.01.08-1.21.11")
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")
+    implementation("ca.atlasengine:atlas-projectiles:2.1.5")
+    implementation("dev.hollowcube:polar:1.15.0")
 
     compileOnly("net.kyori:adventure-api:4.26.1")
 
@@ -32,6 +34,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(25))
     }
+    withJavadocJar()
 }
 
 kotlin {
@@ -42,7 +45,7 @@ kotlin {
 tasks {
     jar {
         manifest {
-            attributes["Main-Class"] = "org.kanelucky.Minestom4fun"
+            attributes["Main-Class"] = "org.kanelucky.server.Minestom4fun"
             attributes["Implementation-Version"] = project.version
             attributes["Implementation-Title"] = "Minestom4fun"
         }
@@ -61,7 +64,7 @@ tasks.register<JavaExec>("runServer") {
     group = "application"
     description = "Run Minecraft Server"
 
-    mainClass.set("org.kanelucky.Minestom4fun")
+    mainClass.set("org.kanelucky.server.Minestom4fun")
     classpath = sourceSets["main"].runtimeClasspath
 
     jvmArgs(

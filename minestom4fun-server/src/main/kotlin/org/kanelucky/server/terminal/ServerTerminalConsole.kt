@@ -1,4 +1,4 @@
-package org.kanelucky.terminal
+package org.kanelucky.server.terminal
 
 import net.minestom.server.command.CommandSender
 import net.minestom.server.command.builder.CommandDispatcher

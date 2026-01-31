@@ -1,9 +1,10 @@
-package org.kanelucky.event
+package org.kanelucky.server.event
 
 import net.minestom.server.event.GlobalEventHandler
 
-import org.kanelucky.event.player.PlayerJoinEvent
-import org.kanelucky.event.player.PlayerQuitEvent
+import org.kanelucky.server.event.player.PlayerJoinEvent
+import org.kanelucky.server.event.player.PlayerQuitEvent
+import org.kanelucky.server.event.player.PlayerSpawnEvent
 
 /**
  * @author Kanelucky
@@ -13,5 +14,6 @@ object GlobalEvents {
     fun register(handler: GlobalEventHandler) {
         PlayerJoinEvent.register()
         PlayerQuitEvent.register()
+        PlayerSpawnEvent.register()
     }
 }

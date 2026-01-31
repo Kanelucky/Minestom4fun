@@ -1,14 +1,18 @@
-package org.kanelucky.commands.defaults
+package org.kanelucky.server.commands.defaults
 
 import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
 import dev.rollczi.litecommands.annotations.execute.Execute
-import net.kyori.adventure.text.Component
 
+import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.format.NamedTextColor
+
+import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.Player
-import org.kanelucky.text.prefix.commands.defaults.DefaultCommandPrefix
+
+import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
 
 /**
  * @author Kanelucky
@@ -24,8 +28,8 @@ class GameModeCommand {
 
         val msgMode = Component.text()
             .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
-            .append(Component.text("§aGamemode set to §e"))
-            .append(Component.text(mode.name))
+            .append(Component.text("Gamemode set to ", NamedTextColor.GREEN))
+            .append(Component.text(mode.name, NamedTextColor.YELLOW))
             .build()
 
         player.sendMessage(msgMode)
@@ -33,7 +37,7 @@ class GameModeCommand {
 
     @Execute
     fun other(
-        @Context sender: Player,
+        @Context sender: CommandSender,
         @Arg mode: GameMode,
         @Arg target: Player
     ) {
@@ -42,14 +46,14 @@ class GameModeCommand {
 
         val msgMode = Component.text()
             .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
-            .append(Component.text("§aYour GameModeCommand has been set to §e"))
-            .append(Component.text(mode.name))
+            .append(Component.text("Your GameModeCommand has been set to ", NamedTextColor.GREEN))
+            .append(Component.text(mode.name, NamedTextColor.YELLOW))
             .build()
 
         val msgTarget = Component.text()
             .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
-            .append(Component.text("§aSet GameModeCommand of §e"))
-            .append(Component.text(target.username))
+            .append(Component.text("Set GameModeCommand of ", NamedTextColor.GREEN))
+            .append(Component.text(target.username, NamedTextColor.YELLOW))
             .build()
 
         target.sendMessage(msgMode)

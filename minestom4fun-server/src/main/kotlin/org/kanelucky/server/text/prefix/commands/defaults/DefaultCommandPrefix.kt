@@ -1,4 +1,4 @@
-package org.kanelucky.text.prefix.commands.defaults
+package org.kanelucky.server.text.prefix.commands.defaults
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor

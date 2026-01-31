@@ -1,4 +1,4 @@
-package org.kanelucky.event.player
+package org.kanelucky.server.event.player
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.TranslatableComponent
@@ -8,7 +8,7 @@ import net.minestom.server.event.Event
 import net.minestom.server.event.EventNode
 import net.minestom.server.event.player.PlayerDeathEvent
 
-import org.kanelucky.text.prefix.event.player.PlayerEventPrefix
+import org.kanelucky.server.text.prefix.event.player.PlayerEventPrefix
 
 /**
  * @author Kanelucky

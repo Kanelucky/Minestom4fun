@@ -1,4 +1,4 @@
-package org.kanelucky.world.generator
+package org.kanelucky.server.world.generator
 
 import net.minestom.server.instance.block.Block
 import net.minestom.server.instance.generator.GenerationUnit

@@ -1,4 +1,4 @@
-package org.kanelucky.event
+package org.kanelucky.server.event
 
 import net.minestom.server.event.GlobalEventHandler
 

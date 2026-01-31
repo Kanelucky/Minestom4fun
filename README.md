@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/Kanelucky/Minestom4fun">
-    <img src="src/main/resources/icon.png" alt="Logo" width="200" height="200">
+    <img src="minestom4fun-server/src/main/resources/icon.png" alt="Logo" width="200" height="200">
   </a>
 
   <h1>Minestom4fun</h1>

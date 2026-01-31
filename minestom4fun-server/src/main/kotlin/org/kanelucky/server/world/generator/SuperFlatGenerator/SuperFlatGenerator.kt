@@ -1,4 +1,4 @@
-package org.kanelucky.world.generator.SuperFlatGenerator
+package org.kanelucky.server.world.generator.SuperFlatGenerator
 
 import net.minestom.server.instance.generator.GenerationUnit
 import net.minestom.server.instance.generator.Generator

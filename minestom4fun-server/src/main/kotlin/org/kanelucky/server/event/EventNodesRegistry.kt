@@ -10,7 +10,7 @@ import org.kanelucky.server.event.player.PlayerPickupItemEvent
 /**
  * @author Kanelucky
  */
-object EventNodes {
+object EventNodesRegistry {
 
     fun register(handler: GlobalEventHandler) {
 

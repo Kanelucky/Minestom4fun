@@ -9,7 +9,7 @@ import org.kanelucky.server.event.player.PlayerSpawnEvent
 /**
  * @author Kanelucky
  */
-object GlobalEvents {
+object GlobalEventsRegistry {
 
     fun register(handler: GlobalEventHandler) {
         PlayerJoinEvent.register()

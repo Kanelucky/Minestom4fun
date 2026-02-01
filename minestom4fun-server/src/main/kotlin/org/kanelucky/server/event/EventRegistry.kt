@@ -7,7 +7,7 @@ import net.minestom.server.event.GlobalEventHandler
  */
 object EventRegistry {
     fun register(handler: GlobalEventHandler) {
-        GlobalEvents.register(handler)
-        EventNodes.register(handler)
+        GlobalEventsRegistry.register(handler)
+        EventNodesRegistry.register(handler)
     }
 }

@@ -25,6 +25,7 @@ object PlayerDeathEvent {
 
             val message = if (deathText is TranslatableComponent) {
                 when (deathText.key()) {
+
                     "death.attack.fall" ->
                         "${player.username} fell from a high place"
 
@@ -33,6 +34,27 @@ object PlayerDeathEvent {
 
                     "death.attack.lava" ->
                         "${player.username} tried to swim in lava"
+
+                    "death.attack.inFire" ->
+                        "${player.username} went up in flames"
+
+                    "death.attack.onFire" ->
+                        "${player.username} burned to death"
+
+                    "death.attack.fire" ->
+                        "${player.username} burned to death"
+
+                    "death.attack.wither" ->
+                        "${player.username} withered away"
+
+                    "death.attack.cactus" ->
+                        "${player.username} was pricked to death"
+
+                    "death.attack.sweetBerryBush" ->
+                        "${player.username} was poked to death by a sweet berry bush"
+
+                    "death.attack.sting" ->
+                        "${player.username} was stung to death"
 
                     else ->
                         "${player.username} died (${deathText.key()})"

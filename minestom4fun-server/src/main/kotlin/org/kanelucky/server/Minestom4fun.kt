@@ -15,6 +15,7 @@ import org.kanelucky.server.network.status.ServerListPing
 import org.kanelucky.server.terminal.ServerTerminalConsole
 import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatGenerator
 import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.BottomlessPit
+import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.Void
 
 import java.nio.file.Files
 import java.nio.file.Path
@@ -43,7 +44,7 @@ object Minestom4fun {
         instanceContainer.setChunkLoader(PolarLoader(polarPath))
 
         // Set the ChunkGenerator
-        instanceContainer.setGenerator(SuperFlatGenerator(BottomlessPit()))
+        instanceContainer.setGenerator(SuperFlatGenerator(Void()))
 
         globalEventHandler = MinecraftServer.getGlobalEventHandler()
 

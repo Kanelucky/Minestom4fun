@@ -19,7 +19,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
  * @author Kanelucky
  */
 @Command(name = "gamemode", aliases = ["gm"])
-@Permission("minestom4fun.commands.defaults.gamemode")
+//@Permission("minestom4fun.commands.defaults.gamemode")
 class GameModeCommand {
     @Execute
     fun self(

@@ -17,7 +17,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
  * @author Kanelucky
  */
 @Command(name = "version", aliases = ["ver"])
-@Permission("minestom4fun.commands.defaults.version")
+//@Permission("minestom4fun.commands.defaults.version")
 class VersionCommand {
     @Execute
     fun execute(@Context sender: CommandSender ) {

@@ -8,5 +8,6 @@ dependencyResolutionManagement {
         maven { url = uri("https://reposilite.atlasengine.ca/public") }
         maven { url = uri("https://jitpack.io") }
         maven { url = uri("https://repo.panda-lang.org/releases") }
+        maven { url = uri("https://repo.hypera.dev/snapshots/") }
     }
 }

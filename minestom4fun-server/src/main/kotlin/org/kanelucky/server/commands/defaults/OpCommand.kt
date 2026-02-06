@@ -9,7 +9,7 @@ import dev.rollczi.litecommands.annotations.permission.Permission
 import net.minestom.server.entity.Player
 
 @Command(name = "op")
-@Permission("minestom4fun.commands.defaults.op")
+//@Permission("minestom4fun.commands.defaults.op")
 class OpCommand {
     @Execute
     fun execute(
@@ -18,7 +18,7 @@ class OpCommand {
     ) {
         target.permissionLevel = 4
 
-        sender.sendMessage("§aĐã OP ${target.username}")
-        target.sendMessage("§6Bạn đã được OP")
+        sender.sendMessage("§aMake ${target.username} OP")
+        target.sendMessage("§6You have been OP")
     }
 }

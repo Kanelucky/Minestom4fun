@@ -20,8 +20,11 @@
 - Commands
   - [x] GamemodeCommand
   - [x] VersionCommand
+  - [x] TPSCommand
+  - [x] OPCommand (W.I.P)
 - World
-  - [ ] World generation 
+  - [x] Basic superflat generator and preset
+  - [ ] World generation
   - [ ] Liquid Physics
   - [ ] Entity Spawning
 - Event
@@ -31,7 +34,11 @@
       - [x] PlayerPickupItemEvent
       - [x] PlayerDropItemEvent
       - [x] PlayerDeathEvent
+      - [x] PlayerSpawnEvent
   - Block
     - [x] BlockBreakEvent
+- Network
+  - Status
+    - [x] ServerListPing 
 - Terminal
-  - [ ] ServerTerminalConsole
+  - [x] ServerTerminalConsole

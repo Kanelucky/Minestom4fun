@@ -42,3 +42,12 @@
     - [x] ServerListPing 
 - Terminal
   - [x] ServerTerminalConsole
+- Text
+  - Prefix
+    - Commands
+      - [x] DefaultCommandPrefix
+  - Event
+    - Block
+      - [x] BlockEventPrefix
+    - Player
+      - [x] PlayerEventPrefix

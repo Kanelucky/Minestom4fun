@@ -8,6 +8,10 @@ import dev.rollczi.litecommands.annotations.permission.Permission
 
 import net.minestom.server.entity.Player
 
+/**
+ * @author Kanelucky
+ * Work in progress
+ */
 @Command(name = "op")
 //@Permission("minestom4fun.commands.defaults.op")
 class OpCommand {

@@ -22,7 +22,6 @@ dependencies {
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")
     implementation("ca.atlasengine:atlas-projectiles:2.1.5")
     implementation("dev.hollowcube:polar:1.15.0")
-    implementation("dev.lu15:luckperms-minestom:8feae07")
 
     compileOnly("net.kyori:adventure-api:4.26.1")
 

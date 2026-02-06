@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f27d29c-bdb1-452c-b338-fe39f24b9195" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minestom4fun-server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/event/GlobalEventsRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/event/GlobalEventsRegistry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionResolvers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionResolvers.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +48,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"

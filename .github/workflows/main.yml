@@ -32,4 +32,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: minestom4fun-server
-          path: build/libs/*.jar
+          path: minestom4fun-server/build/libs/*-shaded.jar

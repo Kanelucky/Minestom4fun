@@ -4,11 +4,12 @@ plugins {
 }
 
 group = "org.kanelucky"
-version = "0.1.2"
+version = "0.1.3"
 
 tasks.named<Jar>("jar") {
     enabled = false
 }
+
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     enabled = false
 }

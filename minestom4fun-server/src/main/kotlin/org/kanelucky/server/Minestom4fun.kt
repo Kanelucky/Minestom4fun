@@ -1,25 +1,31 @@
 package org.kanelucky.server
 
+
 import io.github.togar2.pvp.MinestomPvP
 import io.github.togar2.pvp.feature.CombatFeatures
 
 import net.hollowcube.polar.PolarLoader
-
 import net.minestom.server.MinecraftServer
 import net.minestom.server.event.GlobalEventHandler
 import net.minestom.server.instance.InstanceContainer
+import net.minestom.server.instance.LightingChunk
+import net.minestom.server.instance.anvil.AnvilLoader
 
 import org.kanelucky.server.commands.CommandRegistry
+import org.kanelucky.server.config.ConfigManager
+import org.kanelucky.server.config.YamlLoader
+import org.kanelucky.server.config.server.ServerSettings
 import org.kanelucky.server.event.EventRegistry
 import org.kanelucky.server.network.status.ServerListPing
 import org.kanelucky.server.terminal.ServerTerminalConsole
 import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatGenerator
 import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.ClassicFlat
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.Void
 
+import rocks.minestom.worldgen.WorldGenerators
 
 import java.nio.file.Files
 import java.nio.file.Path
+
 
 /**
  * @author Kanelucky
@@ -32,6 +38,14 @@ object Minestom4fun {
 
     @JvmStatic
     fun main() {
+
+        //Config
+        ConfigManager.init()
+        val serverSettings = YamlLoader.load(
+            ConfigManager.resolve("server", "server-settings.yml"),
+            ServerSettings::class.java,
+            ServerSettings()
+        )
 
         minecraftServer = MinecraftServer.init()
 
@@ -46,6 +60,8 @@ object Minestom4fun {
 
         // Set the ChunkGenerator
         instanceContainer.setGenerator(SuperFlatGenerator(ClassicFlat()))
+
+        instanceContainer.setChunkSupplier(::LightingChunk)
 
         globalEventHandler = MinecraftServer.getGlobalEventHandler()
 

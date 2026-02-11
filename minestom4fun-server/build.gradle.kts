@@ -31,12 +31,15 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.snakeyaml:snakeyaml-engine:2.7")
 
-    implementation("net.minestom:minestom:2026.01.08-1.21.11")
+    implementation("net.minestom:minestom:2026.02.09-1.21.11")
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")
     implementation("ca.atlasengine:atlas-projectiles:2.1.5")
     implementation("dev.hollowcube:polar:1.15.0")
     implementation("dev.hollowcube:schem:2.0.1")
     implementation("dev.rollczi:litecommands-minestom:3.10.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
+    implementation("com.charleskorn.kaml:kaml:0.61.0")
+    implementation(files("libs/worldgen-0.1.0.jar"))
 
     compileOnly("net.kyori:adventure-api:4.26.1")
 }

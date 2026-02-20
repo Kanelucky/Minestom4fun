@@ -58,4 +58,4 @@
 
 ## Credits
 
-- [SwiftMC](https://github.com/XDPXI/SwiftMC)
+- [<img src="https://raw.githubusercontent.com/XDPXI/SwiftMC-Website/refs/heads/main/favicon.png" width="18"/>]() [SwiftMC](https://github.com/XDPXI/SwiftMC)

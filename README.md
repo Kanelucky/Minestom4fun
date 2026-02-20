@@ -9,6 +9,10 @@
   <p>Just 4 fun xd</p>
 </div>
 
+> [!IMPORTANT]
+>
+> This project is in 0.x stage and is under active development. Breaking changes may occur at any time.
+
 ## Goals
 - ### Make Minestom do what it was never designed for: **Survival**
 - ### Pure experimentation, no limits, just 4 fun

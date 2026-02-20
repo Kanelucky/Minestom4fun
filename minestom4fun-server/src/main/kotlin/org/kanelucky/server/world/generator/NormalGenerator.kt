@@ -35,6 +35,14 @@ class NormalGenerator : Generator {
         private val AMP  = doubleArrayOf(35.0, 12.0, 4.0)
 
         private const val TREE_CHANCE = 0.0025
+
+        private const val VEGETATION_CHANCE = 0.22
+        private const val FLOWER_CHANCE = 0.04
+        private const val TALL_GRASS_CHANCE = 0.25
+
+        private const val SEAGRASS_CHANCE = 0.18
+        private const val TALL_SEAGRASS_CHANCE = 0.35
+        private const val MIN_WATER_DEPTH = 3
     }
 
     private val noise = FastNoise(ConfigManager.serverSettings.seed)
@@ -69,6 +77,7 @@ class NormalGenerator : Generator {
         }
 
         val trees = mutableListOf<Triple<Int,Int,Int>>()
+        val vegetation = mutableListOf<Triple<Int,Int,Int>>()
 
         for (x in 0..15) {
             for (z in 0..15) {
@@ -83,6 +92,7 @@ class NormalGenerator : Generator {
                     if (block != null)
                         unit.modifier().setBlock(wx, y, wz, block)
                 }
+                placeSeagrass(unit, wx, heights[x][z], wz)
 
                 if (height > WATER_LEVEL &&
                     height < WATER_LEVEL + 20 &&
@@ -91,10 +101,20 @@ class NormalGenerator : Generator {
                 ) {
                     trees += Triple(wx, height, wz)
                 }
+
+                if (height > WATER_LEVEL &&
+                    x in 1..14 && z in 1..14 &&
+                    heights[x][z] > WATER_LEVEL + 1
+                ) {
+                    if (Math.random() < VEGETATION_CHANCE) {
+                        vegetation += Triple(wx, height, wz)
+                    }
+                }
             }
         }
 
         trees.forEach { placeTree(unit, it.first, it.second, it.third) }
+        vegetation.forEach { placeVegetation(unit, it.first, it.second, it.third) }
     }
 
     private fun getBlock(
@@ -157,5 +177,59 @@ class NormalGenerator : Generator {
                         )
                     }
                 }
+    }
+
+    private fun placeVegetation(unit: GenerationUnit, x: Int, y: Int, z: Int) {
+
+        val roll = Math.random()
+
+        if (roll < FLOWER_CHANCE) {
+            val flower = when ((0..4).random()) {
+                0 -> Block.POPPY
+                1 -> Block.DANDELION
+                2 -> Block.AZURE_BLUET
+                3 -> Block.OXEYE_DAISY
+                else -> Block.CORNFLOWER
+            }
+
+            unit.modifier().setBlock(x, y, z, flower)
+            return
+        }
+
+        if (roll < TALL_GRASS_CHANCE) {
+            unit.modifier().setBlock(x, y, z, Block.TALL_GRASS.withProperty("half", "lower"))
+            unit.modifier().setBlock(x, y + 1, z, Block.TALL_GRASS.withProperty("half", "upper"))
+            return
+        }
+
+        unit.modifier().setBlock(x, y, z, Block.SHORT_GRASS)
+    }
+
+    private fun placeSeagrass(unit: GenerationUnit, x: Int, terrainHeight: Int, z: Int) {
+
+        val depth = WATER_LEVEL - terrainHeight
+
+        if (depth < MIN_WATER_DEPTH) return
+
+        val floorY = terrainHeight
+
+        val plantY = floorY
+
+        if (depth <= 3) return
+
+        if (Math.random() < SEAGRASS_CHANCE) {
+            unit.modifier().setBlock(x, plantY, z, Block.SEAGRASS)
+        }
+
+        if (depth >= 5 && Math.random() < TALL_SEAGRASS_CHANCE) {
+            unit.modifier().setBlock(x, plantY, z, Block.TALL_SEAGRASS)
+        }
+
+        if (depth > 6 && Math.random() < 0.08) {
+            val height = (2..5).random()
+            for (i in 0 until height) {
+                unit.modifier().setBlock(x, plantY + i, z, Block.KELP_PLANT)
+            }
+        }
     }
 }

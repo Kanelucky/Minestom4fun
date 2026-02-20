@@ -55,3 +55,7 @@
       - [x] BlockEventPrefix
     - Player
       - [x] PlayerEventPrefix
+
+## Credits
+
+- [SwiftMC](https://github.com/XDPXI/SwiftMC)

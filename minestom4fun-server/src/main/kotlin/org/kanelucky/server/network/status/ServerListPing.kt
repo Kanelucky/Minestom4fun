@@ -6,6 +6,7 @@ import net.kyori.adventure.text.format.NamedTextColor
 import net.minestom.server.MinecraftServer
 import net.minestom.server.event.server.ServerListPingEvent
 import net.minestom.server.ping.Status
+import org.kanelucky.server.config.ConfigManager
 
 /**
  * @author Kanelucky
@@ -17,6 +18,8 @@ object ServerListPing {
 
                 val onlinePlayers = MinecraftServer.getConnectionManager().getOnlinePlayerCount()
 
+                val maxPlayers = ConfigManager.serverSettings.maxPlayers
+
                 val version: String = this::class.java.`package`.implementationVersion ?: "dev"
 
                 val description = Component.text("Welcome to my Minecraft server!", NamedTextColor.GOLD)
@@ -27,7 +30,7 @@ object ServerListPing {
                     .description(description)
                     .playerInfo(Status.PlayerInfo.builder()
                         .onlinePlayers(onlinePlayers)
-                        .maxPlayers(onlinePlayers)
+                        .maxPlayers(maxPlayers)
                         .build())
                     .versionInfo(Status.VersionInfo("§aMinestom4fun §7v${version}", protocolNumber))
                     .build())

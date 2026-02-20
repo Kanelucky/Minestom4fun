@@ -1,4 +1,4 @@
-package org.kanelucky.server.event.block
+package org.kanelucky.server.events.block
 
 import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.ItemEntity

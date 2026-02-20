@@ -1,11 +1,11 @@
-package org.kanelucky.server.event
+package org.kanelucky.server.events
 
 import net.minestom.server.event.GlobalEventHandler
 
-import org.kanelucky.server.event.block.BlockBreakEvent
-import org.kanelucky.server.event.player.PlayerDeathEvent
-import org.kanelucky.server.event.player.PlayerDropItemEvent
-import org.kanelucky.server.event.player.PlayerPickupItemEvent
+import org.kanelucky.server.events.block.BlockBreakEvent
+import org.kanelucky.server.events.player.PlayerDeathEvent
+import org.kanelucky.server.events.player.PlayerDropItemEvent
+import org.kanelucky.server.events.player.PlayerPickupItemEvent
 
 /**
  * @author Kanelucky

@@ -6,6 +6,9 @@ import net.minestom.server.command.builder.CommandDispatcher
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
+/**
+ * @author Kanelucky
+ */
 class ServerTerminalConsole {
     fun startConsole(dispatcher: CommandDispatcher, sender: CommandSender) {
         Thread {

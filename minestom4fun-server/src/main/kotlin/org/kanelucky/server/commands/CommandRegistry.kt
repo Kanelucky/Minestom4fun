@@ -6,6 +6,7 @@ import dev.rollczi.litecommands.minestom.LiteMinestomFactory
 import net.minestom.server.command.CommandSender
 
 import org.kanelucky.server.commands.defaults.GameModeCommand
+import org.kanelucky.server.commands.defaults.KillCommand
 import org.kanelucky.server.commands.defaults.OpCommand
 import org.kanelucky.server.commands.defaults.TPSCommand
 import org.kanelucky.server.commands.defaults.VersionCommand
@@ -21,7 +22,8 @@ object CommandRegistry {
                 GameModeCommand(),
                 VersionCommand(),
                 TPSCommand(),
-                OpCommand()
+                OpCommand(),
+                KillCommand()
             )
             .build()
     }

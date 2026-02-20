@@ -9,25 +9,23 @@ import net.minestom.server.MinecraftServer
 import net.minestom.server.event.GlobalEventHandler
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.LightingChunk
-import net.minestom.server.instance.anvil.AnvilLoader
 
 import org.kanelucky.server.commands.CommandRegistry
 import org.kanelucky.server.config.ConfigManager
-import org.kanelucky.server.config.YamlLoader
-import org.kanelucky.server.config.server.ServerSettings
-import org.kanelucky.server.event.EventRegistry
+import org.kanelucky.server.config.ConfigManager.serverSettings
+import org.kanelucky.server.events.EventRegistry
 import org.kanelucky.server.network.status.ServerListPing
 import org.kanelucky.server.terminal.ServerTerminalConsole
-import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatGenerator
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.ClassicFlat
-
-import rocks.minestom.worldgen.WorldGenerators
+import org.kanelucky.server.world.generator.NormalGenerator
+import org.kanelucky.server.world.generator.OverworldGenerator
 
 import java.nio.file.Files
 import java.nio.file.Path
 
 
 /**
+ * Main class of Minestom4fun
+ *
  * @author Kanelucky
  */
 object Minestom4fun {
@@ -39,13 +37,7 @@ object Minestom4fun {
     @JvmStatic
     fun main() {
 
-        //Config
         ConfigManager.init()
-        val serverSettings = YamlLoader.load(
-            ConfigManager.resolve("server", "server-settings.yml"),
-            ServerSettings::class.java,
-            ServerSettings()
-        )
 
         minecraftServer = MinecraftServer.init()
 
@@ -59,7 +51,7 @@ object Minestom4fun {
         instanceContainer.setChunkLoader(PolarLoader(polarPath))
 
         // Set the ChunkGenerator
-        instanceContainer.setGenerator(SuperFlatGenerator(ClassicFlat()))
+        instanceContainer.setGenerator(NormalGenerator())
 
         instanceContainer.setChunkSupplier(::LightingChunk)
 
@@ -87,6 +79,6 @@ object Minestom4fun {
 
         ServerTerminalConsole().startConsole(dispatcher, console)
 
-        minecraftServer.start("0.0.0.0", 25565)
+        minecraftServer.start(serverSettings.address, serverSettings.port)
     }
 }

@@ -1,9 +1,8 @@
-package org.kanelucky.server.event.player
+package org.kanelucky.server.events.player
 
 import net.minestom.server.MinecraftServer
 import net.minestom.server.coordinate.Pos
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent
-import net.minestom.server.instance.heightmap.WorldSurfaceHeightmap
 
 import org.kanelucky.server.Minestom4fun.instanceContainer
 
@@ -19,12 +18,10 @@ object PlayerSpawnEvent {
                 val instance = instanceContainer
                 event.spawningInstance = instance
 
-                val chunk = instance.getChunkAt(0.0, 0.0) ?: return@addListener
+                val chunk = instance.loadChunk(0, 0).join()
+                val y = chunk.motionBlockingHeightmap().getHeight(0, 0)
 
-                val heightmap = WorldSurfaceHeightmap(chunk)
-                val y = heightmap.getHeight(0, 0)
-
-                event.player.respawnPoint = Pos(0.0, y.toDouble() + 1, 0.0)
+                event.player.respawnPoint = Pos(0.0, y + 1.0, 0.0)
 
             }
     }

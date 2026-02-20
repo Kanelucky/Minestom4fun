@@ -1,4 +1,4 @@
-package org.kanelucky.server.event.player
+package org.kanelucky.server.events.player
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.TranslatableComponent

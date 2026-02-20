@@ -28,7 +28,7 @@
   - [x] OPCommand (W.I.P)
 - World
   - [x] Basic superflat generator and preset
-  - [ ] World generation
+  - [x] World generation (UNSTABLE)
   - [ ] Liquid Physics
   - [ ] Entity Spawning
 - Event

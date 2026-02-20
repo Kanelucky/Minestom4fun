@@ -19,12 +19,6 @@ import kotlin.math.abs
  * to replicate vanilla terrain behavior. Instead, it
  * provides a clean, predictable, and optimized terrain
  *
- * Key goals:
- * - deterministic & stable generation
- * - fast performance under heavy load
- * - smooth terrain shaping
- * - minimal generation artifacts
- *
  * Ported from SwiftMC concepts:
  * https://github.com/XDPXI/SwiftMC
  *

@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f27d29c-bdb1-452c-b338-fe39f24b9195" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/WorldConstants.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/features/decoration/SeagrassDecorator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/features/decoration/VegetationDecorator.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/features/object/TreeGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/KillCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/KillCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionResolvers.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionsHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionsHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/NormalGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/NormalGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/OverworldGenerator.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/OverworldGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/biomes/BiomeProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/biomes/BiomeProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/decoration/TreeGenerator.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/decoration/VegetationDecorator.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/noise/FastNoise.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/noise/FastNoise.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/noise/NoiseConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/noise/NoiseConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/noise/TerrainNoise.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/noise/TerrainNoise.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/terrain/BaseTerrain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/terrain/BaseTerrain.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/terrain/CaveCarver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/terrain/CaveCarver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/terrain/RiverCarver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/generator/terrain/RiverCarver.kt" afterDir="false" />
-    </list>
+    <list default="true" id="1f27d29c-bdb1-452c-b338-fe39f24b9195" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -5,11 +5,13 @@ import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
 import dev.rollczi.litecommands.annotations.execute.Execute
 import dev.rollczi.litecommands.annotations.permission.Permission
+
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
-import net.minestom.server.command.CommandSender
 
+import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.Player
+
 import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
 
 /**

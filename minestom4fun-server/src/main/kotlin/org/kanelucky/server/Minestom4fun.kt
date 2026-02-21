@@ -14,7 +14,7 @@ import org.kanelucky.server.commands.CommandRegistry
 import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.config.ConfigManager.serverSettings
 import org.kanelucky.server.events.EventRegistry
-import org.kanelucky.server.network.status.ServerListPing
+import org.kanelucky.server.network.NetworkRegistry
 import org.kanelucky.server.terminal.ServerTerminalConsole
 import org.kanelucky.server.world.generator.NormalGenerator
 import org.kanelucky.server.world.generator.OverworldGenerator
@@ -57,7 +57,7 @@ object Minestom4fun {
 
         globalEventHandler = MinecraftServer.getGlobalEventHandler()
 
-        //Register events
+        // Register events
         EventRegistry.register(handler = globalEventHandler)
 
         // Register commands
@@ -68,7 +68,8 @@ object Minestom4fun {
         val modern = CombatFeatures.modernVanilla()
         globalEventHandler.addChild(modern.createNode())
 
-        ServerListPing.register()
+        // Network
+        NetworkRegistry.initialize()
 
         // Saving world
         instanceContainer.saveChunksToStorage()

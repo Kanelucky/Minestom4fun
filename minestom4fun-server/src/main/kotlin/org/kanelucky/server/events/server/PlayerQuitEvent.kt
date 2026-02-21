@@ -4,7 +4,8 @@ import net.kyori.adventure.text.Component
 import net.minestom.server.MinecraftServer
 import net.minestom.server.entity.Player
 import net.minestom.server.event.player.PlayerDisconnectEvent
-import org.kanelucky.server.text.prefix.event.player.PlayerEventPrefix
+import org.kanelucky.server.text.prefix.events.player.PlayerEventPrefix
+import org.kanelucky.server.text.prefix.events.server.ServerEventPrefix
 
 /**
  * @author Kanelucky
@@ -18,7 +19,7 @@ object PlayerQuitEvent {
                 val player: Player = event.player
 
                 val msg = Component.text()
-                    .append(PlayerEventPrefix.EVENT_PLAYER)
+                    .append(ServerEventPrefix.EVENT_SERVER)
                     .append(Component.text(player.username))
                     .append(Component.text(" left the game"))
                     .build()

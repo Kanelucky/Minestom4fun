@@ -8,7 +8,7 @@ import org.kanelucky.server.config.ConfigManager
 object NoiseConfig {
 
     val seed: Long
-        get() = ConfigManager.serverSettings.seed
+        get() = ConfigManager.worldSettings.seed
 
     const val CONTINENT_SCALE = 0.0008
     const val HILL_SCALE = 0.01

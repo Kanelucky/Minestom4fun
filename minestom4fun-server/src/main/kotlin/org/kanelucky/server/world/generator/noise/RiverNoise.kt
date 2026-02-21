@@ -9,7 +9,7 @@ import kotlin.math.abs
  */
 object RiverNoise {
 
-    private val noise = FastNoise(ConfigManager.serverSettings.seed)
+    private val noise = FastNoise(ConfigManager.worldSettings.seed)
 
     fun sample(x: Int, z: Int): Double {
         return abs(

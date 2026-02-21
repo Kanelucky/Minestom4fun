@@ -9,7 +9,7 @@ import org.kanelucky.server.world.generator.WorldConstants.WATER_LEVEL
  */
 object TerrainNoise {
 
-    private val noise = FastNoise(ConfigManager.serverSettings.seed)
+    private val noise = FastNoise(ConfigManager.worldSettings.seed)
     private val climate = ClimateNoise(NoiseConfig.seed + 1L)
 
     private const val BASE_HEIGHT = 63

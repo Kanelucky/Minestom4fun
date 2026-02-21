@@ -22,7 +22,7 @@ object ServerListPing {
 
                 val version: String = this::class.java.`package`.implementationVersion ?: "dev"
 
-                val description = Component.text("Welcome to my Minecraft server!", NamedTextColor.GOLD)
+                val description = Component.text(ConfigManager.networkSettings.motd)
 
                 val protocolNumber: Int = MinecraftServer.PROTOCOL_VERSION
 

@@ -32,7 +32,7 @@ class KillCommand {
     }
 
     @Execute
-    fun execute(
+    fun other(
         @Sender sender: Player,
         @Arg target: Player
     ) {

@@ -9,4 +9,6 @@ import net.kyori.adventure.text.format.NamedTextColor
 object DefaultCommandPrefix {
     val COMMAND_DEFAULTS: Component =
         Component.text("[Commands/Default] ", NamedTextColor.YELLOW)
+    val COMMAND_ERROR: Component =
+        Component.text("[Commands/Error] ", NamedTextColor.YELLOW)
 }

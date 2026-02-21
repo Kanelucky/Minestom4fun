@@ -30,7 +30,7 @@ class OverworldGenerator : Generator {
 
     private val terrain = BaseTerrain()
     private val caves = CaveCarver()
-    private val riverNoise = FastNoise(ConfigManager.serverSettings.seed)
+    private val riverNoise = FastNoise(ConfigManager.worldSettings.seed)
     private val rivers = RiverCarver(riverNoise)
     private val vegetation = VegetationDecorator()
     private val seagrass = SeagrassDecorator()

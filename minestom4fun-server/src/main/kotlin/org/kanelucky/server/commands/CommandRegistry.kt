@@ -19,6 +19,7 @@ import org.kanelucky.server.permission.ServerPermissionResolver
 object CommandRegistry {
 
     fun initialize(): LiteCommands<CommandSender> {
+        UnknownCommandHandler.register()
         return LiteMinestomFactory.builder()
             .permissionResolver(ServerPermissionResolver())
             .commands(

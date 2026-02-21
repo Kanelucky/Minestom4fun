@@ -6,6 +6,7 @@ import net.minestom.server.event.Event
 import net.minestom.server.event.EventNode
 import net.minestom.server.event.player.PlayerBlockBreakEvent
 import net.minestom.server.item.ItemStack
+import org.kanelucky.server.events.server.PlayerQuitEvent
 
 import java.time.Duration
 

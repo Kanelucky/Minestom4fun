@@ -56,6 +56,19 @@
     - Player
       - [x] PlayerEventPrefix
 
+## Usage
+
+### Requirements
+- Java 25 JRE/JDK
+- Windows / macOS / Linux / FreeBSD
+
+### Steps
+1. Download the latest release from [Releases](https://github.com/Kanelucky/Minestom4fun/releases) or build from source
+2. Run the server:
+```bash
+java --enable-native-access=ALL-UNNAMED -XX:+UnlockDiagnosticVMOptions -jar minestom4fun-server-*-shaded.jar nogui
+```
+
 ## Credits
 
 - [<img src="https://raw.githubusercontent.com/XDPXI/SwiftMC-Website/refs/heads/main/favicon.png" width="18"/>]() [SwiftMC](https://github.com/XDPXI/SwiftMC)

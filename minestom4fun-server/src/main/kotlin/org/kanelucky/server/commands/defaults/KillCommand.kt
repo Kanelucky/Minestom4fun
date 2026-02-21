@@ -10,7 +10,7 @@ import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
 import net.minestom.server.entity.Player
 
-import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
+import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.COMMAND_DEFAULTS
 
 @Command(name = "kill")
 @Permission("minestom4fun.commands.defaults.kill")
@@ -23,7 +23,7 @@ class KillCommand {
         sender.kill()
 
         val message = Component.text()
-            .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
+            .append(COMMAND_DEFAULTS)
             .append(Component.text("Killed ", NamedTextColor.GREEN))
             .append(Component.text("${sender.username}", NamedTextColor.YELLOW))
             .build()
@@ -34,12 +34,12 @@ class KillCommand {
     @Execute
     fun other(
         @Sender sender: Player,
-        @Arg target: Player
+        @Arg("target") target: Player
     ) {
         target.kill()
 
         val message = Component.text()
-            .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
+            .append(COMMAND_DEFAULTS)
             .append(Component.text("Killed ", NamedTextColor.GREEN))
             .append(Component.text("${target.username}", NamedTextColor.YELLOW))
             .build()

@@ -14,8 +14,10 @@ import org.kanelucky.server.commands.CommandRegistry
 import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.config.ConfigManager.serverSettings
 import org.kanelucky.server.events.EventRegistry
+import org.kanelucky.server.log.ServerStartupLog
 import org.kanelucky.server.network.NetworkRegistry
 import org.kanelucky.server.terminal.ServerTerminalConsole
+import org.kanelucky.server.world.blocks.WorldBlockRegistry
 import org.kanelucky.server.world.generator.NormalGenerator
 import org.kanelucky.server.world.generator.OverworldGenerator
 
@@ -39,6 +41,8 @@ object Minestom4fun {
 
         ConfigManager.init()
 
+        ServerStartupLog.print()
+
         minecraftServer = MinecraftServer.init()
 
         val instanceManager = MinecraftServer.getInstanceManager()
@@ -51,7 +55,7 @@ object Minestom4fun {
         instanceContainer.setChunkLoader(PolarLoader(polarPath))
 
         // Set the ChunkGenerator
-        instanceContainer.setGenerator(OverworldGenerator())
+        instanceContainer.setGenerator(NormalGenerator())
 
         instanceContainer.setChunkSupplier(::LightingChunk)
 
@@ -71,6 +75,8 @@ object Minestom4fun {
         // Network
         NetworkRegistry.initialize()
 
+        WorldBlockRegistry.initialize()
+
         // Saving world
         instanceContainer.saveChunksToStorage()
 
@@ -81,5 +87,7 @@ object Minestom4fun {
         ServerTerminalConsole().startConsole(dispatcher, console)
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
+
+        ServerStartupLog.done()
     }
 }

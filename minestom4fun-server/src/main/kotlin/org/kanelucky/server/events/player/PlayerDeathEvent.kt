@@ -26,35 +26,40 @@ object PlayerDeathEvent {
             val message = if (deathText is TranslatableComponent) {
                 when (deathText.key()) {
 
-                    "death.attack.fall" ->
-                        "${player.username} fell from a high place"
+                    "death.attack.fall"             -> "${player.username} fell from a high place"
+                    "death.attack.outOfWorld"       -> "${player.username} fell out of the world"
+                    "death.attack.fallingBlock"     -> "${player.username} was squashed by a falling block"
 
-                    "death.attack.player" ->
-                        "${player.username} was slain by another player"
+                    "death.attack.player"           -> "${player.username} was slain by another player"
+                    "death.attack.arrow"            -> "${player.username} was shot by an arrow"
+                    "death.attack.thrown"           -> "${player.username} was knocked into the void"
+                    "death.attack.mob"              -> "${player.username} was killed by a mob"
 
-                    "death.attack.lava" ->
-                        "${player.username} tried to swim in lava"
+                    "death.attack.inFire"           -> "${player.username} went up in flames"
+                    "death.attack.onFire"           -> "${player.username} burned to death"
+                    "death.attack.fire"             -> "${player.username} burned to death"
+                    "death.attack.lava"             -> "${player.username} tried to swim in lava"
+                    "death.attack.hotFloor"         -> "${player.username} discovered the floor was lava"
 
-                    "death.attack.inFire" ->
-                        "${player.username} went up in flames"
+                    "death.attack.drown"            -> "${player.username} drowned"
+                    "death.attack.dryout"           -> "${player.username} died from dehydration"
 
-                    "death.attack.onFire" ->
-                        "${player.username} burned to death"
+                    "death.attack.explosion"        -> "${player.username} blew up"
+                    "death.attack.badRespawnPoint"  -> "${player.username}'s respawn point was obstructed"
 
-                    "death.attack.fire" ->
-                        "${player.username} burned to death"
-
-                    "death.attack.wither" ->
-                        "${player.username} withered away"
-
-                    "death.attack.cactus" ->
-                        "${player.username} was pricked to death"
-
-                    "death.attack.sweetBerryBush" ->
-                        "${player.username} was poked to death by a sweet berry bush"
-
-                    "death.attack.sting" ->
-                        "${player.username} was stung to death"
+                    "death.attack.cactus"           -> "${player.username} was pricked to death"
+                    "death.attack.sweetBerryBush"   -> "${player.username} was poked to death by a sweet berry bush"
+                    "death.attack.wither"           -> "${player.username} withered away"
+                    "death.attack.sting"            -> "${player.username} was stung to death"
+                    "death.attack.starve"           -> "${player.username} starved to death"
+                    "death.attack.magic"            -> "${player.username} was killed by magic"
+                    "death.attack.lightningBolt"    -> "${player.username} was struck by lightning"
+                    "death.attack.flyIntoWall"      -> "${player.username} experienced kinetic energy"
+                    "death.attack.anvil"            -> "${player.username} was squashed by a falling anvil"
+                    "death.attack.dragonBreath"     -> "${player.username} was roasted in dragon's breath"
+                    "death.attack.freeze"           -> "${player.username} froze to death"
+                    "death.attack.stalagmite"       -> "${player.username} was impaled on a stalagmite"
+                    "death.attack.cramming"         -> "${player.username} was squished too much"
 
                     else ->
                         "${player.username} died (${deathText.key()})"

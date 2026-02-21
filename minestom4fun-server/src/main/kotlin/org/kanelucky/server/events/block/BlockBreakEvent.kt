@@ -23,8 +23,6 @@ object BlockBreakEvent {
 
             val player = event.player
 
-            if (player.gameMode == GameMode.CREATIVE) return@addListener
-
             event.block.registry()?.material()?.let { material ->
 
                 val itemEntity = ItemEntity(ItemStack.of(material))

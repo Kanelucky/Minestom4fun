@@ -10,6 +10,8 @@ import org.kanelucky.server.commands.defaults.KillCommand
 import org.kanelucky.server.commands.defaults.OpCommand
 import org.kanelucky.server.commands.defaults.TPSCommand
 import org.kanelucky.server.commands.defaults.VersionCommand
+import org.kanelucky.server.commands.error.CommandInvalidUsageHandler
+import org.kanelucky.server.commands.error.UnknownCommandHandler
 import org.kanelucky.server.permission.PermissionsHandler
 import org.kanelucky.server.permission.ServerPermissionResolver
 
@@ -29,6 +31,7 @@ object CommandRegistry {
                 OpCommand(),
                 KillCommand()
             )
+            .invalidUsage(CommandInvalidUsageHandler())
             .missingPermission(PermissionsHandler())
             .build()
     }

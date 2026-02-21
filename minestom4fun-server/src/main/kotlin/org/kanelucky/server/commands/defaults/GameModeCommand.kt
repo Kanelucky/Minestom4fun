@@ -13,7 +13,7 @@ import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.Player
 
-import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
+import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.COMMAND_DEFAULTS
 
 /**
  * @author Kanelucky
@@ -24,12 +24,12 @@ class GameModeCommand {
     @Execute
     fun self(
         @Context player: Player,
-        @Arg mode: GameMode
+        @Arg("mode") mode: GameMode
     ) {
         player.setGameMode(mode)
 
         val msgMode = Component.text()
-            .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
+            .append(COMMAND_DEFAULTS)
             .append(Component.text("Gamemode set to ", NamedTextColor.GREEN))
             .append(Component.text(mode.name, NamedTextColor.YELLOW))
             .build()
@@ -40,20 +40,20 @@ class GameModeCommand {
     @Execute
     fun other(
         @Context sender: CommandSender,
-        @Arg mode: GameMode,
-        @Arg target: Player
+        @Arg("mode") mode: GameMode,
+        @Arg("target") target: Player
     ) {
 
         target.setGameMode(mode)
 
         val msgMode = Component.text()
-            .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
+            .append(COMMAND_DEFAULTS)
             .append(Component.text("Your GameModeCommand has been set to ", NamedTextColor.GREEN))
             .append(Component.text(mode.name, NamedTextColor.YELLOW))
             .build()
 
         val msgTarget = Component.text()
-            .append(DefaultCommandPrefix.COMMAND_DEFAULTS)
+            .append(COMMAND_DEFAULTS)
             .append(Component.text("Set GameModeCommand of ", NamedTextColor.GREEN))
             .append(Component.text(target.username, NamedTextColor.YELLOW))
             .build()

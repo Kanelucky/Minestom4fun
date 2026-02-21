@@ -1,6 +1,7 @@
 package org.kanelucky.server.world.generator.biomes
 
 import org.kanelucky.server.world.generator.noise.ClimateNoise
+
 import kotlin.math.abs
 
 /**

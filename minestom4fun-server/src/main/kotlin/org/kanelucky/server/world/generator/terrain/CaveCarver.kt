@@ -1,8 +1,11 @@
 package org.kanelucky.server.world.generator.terrain
 
 import net.minestom.server.instance.block.Block
-
 import net.minestom.server.instance.generator.GenerationUnit
+import org.kanelucky.server.world.generator.WorldConstants.CAVE_MIN_Y
+import org.kanelucky.server.world.generator.WorldConstants.CAVE_SURFACE_BUFFER
+import org.kanelucky.server.world.generator.WorldConstants.CAVE_THRESHOLD
+
 import org.kanelucky.server.world.generator.noise.TerrainNoise
 
 /**
@@ -10,22 +13,26 @@ import org.kanelucky.server.world.generator.noise.TerrainNoise
  */
 class CaveCarver {
 
-    fun carve(unit: GenerationUnit) {
-
+    fun carve(
+        unit: GenerationUnit,
+        heights: Array<IntArray>,
+        baseX: Int,
+        baseZ: Int
+    ) {
         val modifier = unit.modifier()
-        val start = unit.absoluteStart()
-        val end = unit.absoluteEnd()
 
-        for (x in start.blockX() until end.blockX()) {
-            for (z in start.blockZ() until end.blockZ()) {
-                for (y in start.blockY() until end.blockY()) {
+        for (lx in 0 until 16) {
+            for (lz in 0 until 16) {
+                val wx = baseX + lx
+                val wz = baseZ + lz
+                val surfaceY = heights[lx][lz]
+                val maxY = (surfaceY - CAVE_SURFACE_BUFFER).coerceAtMost(unit.absoluteEnd().blockY())
 
-                    if (y > 70) continue
+                if (maxY <= CAVE_MIN_Y) continue
 
-                    val noise = TerrainNoise.cave(x, y, z)
-
-                    if (noise > 0.62f) {
-                        modifier.setBlock(x, y, z, Block.AIR)
+                for (y in maxOf(unit.absoluteStart().blockY(), CAVE_MIN_Y) until maxY) {
+                    if (TerrainNoise.cave(wx, y, wz) > CAVE_THRESHOLD) {
+                        modifier.setBlock(wx, y, wz, Block.AIR)
                     }
                 }
             }

@@ -17,10 +17,12 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix
  * @author Kanelucky
  */
 @Command(name = "tps")
-//@Permission("minestom4fun.commands.defaults.tps")
+@Permission("minestom4fun.commands.defaults.tps")
 class TPSCommand {
     @Execute
-    fun execute(@Context sender: CommandSender) {
+    fun execute(
+        @Context sender: CommandSender
+    ) {
         val tps = Tick.SERVER_TICKS.ticksPerSecond
         if (tps >= 19) {
             val msg = Component.text()

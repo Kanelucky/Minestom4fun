@@ -51,7 +51,7 @@ object Minestom4fun {
         instanceContainer.setChunkLoader(PolarLoader(polarPath))
 
         // Set the ChunkGenerator
-        instanceContainer.setGenerator(NormalGenerator())
+        instanceContainer.setGenerator(OverworldGenerator())
 
         instanceContainer.setChunkSupplier(::LightingChunk)
 

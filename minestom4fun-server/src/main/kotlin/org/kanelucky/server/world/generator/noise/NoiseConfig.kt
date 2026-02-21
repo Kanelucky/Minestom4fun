@@ -17,6 +17,8 @@ object NoiseConfig {
     const val RIVER_SCALE = 0.003
 
     const val CAVE_SCALE = 0.05
+    const val CAVE_SCALE_MAIN = 0.035
+    const val CAVE_SCALE_TUNNEL = 0.12
 
     const val TEMP_SCALE = 0.0015
     const val HUMIDITY_SCALE = 0.0015

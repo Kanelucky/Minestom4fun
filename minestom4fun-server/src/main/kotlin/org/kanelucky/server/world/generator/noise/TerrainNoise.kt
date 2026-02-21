@@ -1,6 +1,8 @@
 package org.kanelucky.server.world.generator.noise
 
+import net.minestom.server.instance.block.Block
 import org.kanelucky.server.config.ConfigManager
+import org.kanelucky.server.world.generator.WorldConstants.WATER_LEVEL
 
 /**
  * @author Kanelucky
@@ -8,14 +10,30 @@ import org.kanelucky.server.config.ConfigManager
 object TerrainNoise {
 
     private val noise = FastNoise(ConfigManager.serverSettings.seed)
+    private val climate = ClimateNoise(NoiseConfig.seed + 1L)
+
+    private const val BASE_HEIGHT = 63
+    private val FREQ = doubleArrayOf(0.003, 0.01, 0.05)
+    private val AMP  = doubleArrayOf(35.0, 12.0, 4.0)
 
     fun terrainHeight(x: Int, z: Int): Int {
+        var height = BASE_HEIGHT.toDouble()
+        for (i in FREQ.indices) {
+            height += noise.noise(x * FREQ[i], z * FREQ[i]) * AMP[i]
+        }
+        return height.toInt()
+    }
 
-        val continental = noise.fractal2D(x * 0.0008, z * 0.0008, 4) * 35
-        val hills = noise.fractal2D(x * 0.01, z * 0.01, 3) * 12
-        val detail = noise.fractal2D(x * 0.05, z * 0.05, 2) * 3
+    fun surfaceBlock(x: Int, z: Int): Block {
+        val height = terrainHeight(x, z)
+        val humidity = climate.humidity(x, z)
 
-        return (64 + continental + hills + detail).toInt()
+        return when {
+            height <= WATER_LEVEL     -> Block.WATER
+            height <= WATER_LEVEL + 2 -> Block.SAND
+            humidity < -0.2           -> Block.SAND
+            else                      -> Block.GRASS_BLOCK
+        }
     }
 
     fun cave(x: Int, y: Int, z: Int): Double {

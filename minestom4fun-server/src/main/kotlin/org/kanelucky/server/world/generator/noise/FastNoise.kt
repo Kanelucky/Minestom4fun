@@ -17,6 +17,7 @@ import kotlin.math.floor
  */
 class FastNoise(seed: Long) {
 
+
     private val perm = IntArray(512)
 
     init {
@@ -138,10 +139,18 @@ class FastNoise(seed: Long) {
     private fun fade(t: Double) =
         t * t * t * (t * (t * 6 - 15) + 10)
 
-    private fun lerp(t: Double, a: Double, b: Double) =
+    private fun lerp(
+        t: Double,
+        a: Double,
+        b: Double
+    ) =
         a + t * (b - a)
 
-    private fun grad2(hash: Int, x: Double, y: Double): Double {
+    private fun grad2(
+        hash: Int,
+        x: Double,
+        y: Double
+    ): Double {
         return when (hash and 3) {
             0 -> x + y
             1 -> -x + y
@@ -150,12 +159,18 @@ class FastNoise(seed: Long) {
         }
     }
 
-    private fun grad3(hash: Int, x: Double, y: Double, z: Double): Double {
+    private fun grad3(
+        hash: Int,
+        x: Double,
+        y: Double,
+        z: Double
+    ): Double {
         val h = hash and 15
         val u = if (h < 8) x else y
         val v = if (h < 4) y else if (h == 12 || h == 14) x else z
         return ((if (h and 1 == 0) u else -u) +
                 (if (h and 2 == 0) v else -v))
     }
+
 
 }

@@ -5,47 +5,28 @@ import net.minestom.server.instance.generator.GenerationUnit
 import net.minestom.server.instance.generator.Generator
 
 import org.kanelucky.server.config.ConfigManager
+import org.kanelucky.server.world.generator.WorldConstants.AMP
+import org.kanelucky.server.world.generator.WorldConstants.BASE_HEIGHT
+import org.kanelucky.server.world.generator.WorldConstants.FREQ
+import org.kanelucky.server.world.generator.WorldConstants.TREE_CHANCE
+import org.kanelucky.server.world.generator.WorldConstants.WATER_LEVEL
+import org.kanelucky.server.world.generator.features.decoration.SeagrassDecorator
 import org.kanelucky.server.world.generator.noise.FastNoise
+import org.kanelucky.server.world.generator.features.`object`.TreeGenerator
+import org.kanelucky.server.world.generator.features.decoration.VegetationDecorator
+import org.kanelucky.server.world.generator.noise.NoiseConfig
+import org.kanelucky.server.world.generator.terrain.CaveCarver
+import org.kanelucky.server.world.generator.terrain.RiverCarver
 
-import kotlin.math.abs
+import kotlin.random.Random
 
-/**
- * Normal terrain generator
- *
- * Stable terrain implementation focused on performance,
- * consistency, and long-term world stability
- *
- * Unlike OverworldGenerator, this version does NOT aim
- * to replicate vanilla terrain behavior. Instead, it
- * provides a clean, predictable, and optimized terrain
- *
- * Ported from SwiftMC concepts:
- * https://github.com/XDPXI/SwiftMC
- *
- * Original concept & implementation: XDPXI
- * Stabilized & optimized by: Kanelucky
- */
 class NormalGenerator : Generator {
 
-    companion object {
-        private const val BASE_HEIGHT = 63
-        private const val WATER_LEVEL = 62
-
-        private val FREQ = doubleArrayOf(0.003, 0.01, 0.05)
-        private val AMP  = doubleArrayOf(35.0, 12.0, 4.0)
-
-        private const val TREE_CHANCE = 0.0025
-
-        private const val VEGETATION_CHANCE = 0.22
-        private const val FLOWER_CHANCE = 0.04
-        private const val TALL_GRASS_CHANCE = 0.25
-
-        private const val SEAGRASS_CHANCE = 0.18
-        private const val TALL_SEAGRASS_CHANCE = 0.35
-        private const val MIN_WATER_DEPTH = 3
-    }
-
-    private val noise = FastNoise(ConfigManager.serverSettings.seed)
+    private val noise = FastNoise(NoiseConfig.seed)
+    private val vegetation = VegetationDecorator()
+    private val seagrass = SeagrassDecorator()
+    private val caveCarver = CaveCarver()
+    private val riverCarver = RiverCarver(noise)
 
     override fun generate(unit: GenerationUnit) {
 
@@ -54,9 +35,10 @@ class NormalGenerator : Generator {
 
         val baseX = start.blockX()
         val baseZ = start.blockZ()
-
         val startY = start.blockY()
         val endY = end.blockY()
+
+        val modifier = unit.modifier()
 
         val heights = Array(16) { IntArray(16) }
 
@@ -76,8 +58,7 @@ class NormalGenerator : Generator {
             }
         }
 
-        val trees = mutableListOf<Triple<Int,Int,Int>>()
-        val vegetation = mutableListOf<Triple<Int,Int,Int>>()
+        val treePositions = mutableListOf<Pair<Triple<Int,Int,Int>, Block>>()
 
         for (x in 0..15) {
             for (z in 0..15) {
@@ -87,34 +68,26 @@ class NormalGenerator : Generator {
                 val height = heights[x][z]
 
                 for (y in startY until endY) {
-
                     val block = getBlock(y, height, heights, x, z)
                     if (block != null)
-                        unit.modifier().setBlock(wx, y, wz, block)
-                }
-                placeSeagrass(unit, wx, heights[x][z], wz)
-
-                if (height > WATER_LEVEL &&
-                    height < WATER_LEVEL + 20 &&
-                    Math.random() < TREE_CHANCE &&
-                    x in 2..13 && z in 2..13
-                ) {
-                    trees += Triple(wx, height, wz)
+                        modifier.setBlock(wx, y, wz, block)
                 }
 
-                if (height > WATER_LEVEL &&
-                    x in 1..14 && z in 1..14 &&
-                    heights[x][z] > WATER_LEVEL + 1
-                ) {
-                    if (Math.random() < VEGETATION_CHANCE) {
-                        vegetation += Triple(wx, height, wz)
-                    }
-                }
             }
         }
 
-        trees.forEach { placeTree(unit, it.first, it.second, it.third) }
-        vegetation.forEach { placeVegetation(unit, it.first, it.second, it.third) }
+        caveCarver.carve(unit, heights, baseX, baseZ)
+
+        riverCarver.carve(unit, heights, baseX, baseZ)
+
+        seagrass.decorate(unit, heights, baseX, baseZ)
+
+        treePositions.forEach { (pos, groundBlock) ->
+            TreeGenerator.tryGenerate(unit, pos.first, pos.second, pos.third, groundBlock)
+        }
+
+        vegetation.decorate(unit, heights, baseX, baseZ)
+
     }
 
     private fun getBlock(
@@ -126,7 +99,6 @@ class NormalGenerator : Generator {
     ): Block? {
 
         if (y < height - 4) return Block.STONE
-
         if (y < height - 1) return Block.DIRT
 
         if (y == height - 1) {
@@ -152,84 +124,5 @@ class NormalGenerator : Generator {
         }
 
         return null
-    }
-
-    private fun placeTree(unit: GenerationUnit, x: Int, y: Int, z: Int) {
-        val trunkHeight = (4..6).random()
-
-        for (i in 0..trunkHeight)
-            unit.modifier().setBlock(x, y + i, z, Block.OAK_LOG)
-
-        val top = y + trunkHeight
-
-        for (dx in -2..2)
-            for (dz in -2..2)
-                for (dy in -2..2) {
-
-                    val dist = abs(dx) + abs(dz) + abs(dy)
-
-                    if (dist < 4) {
-                        unit.modifier().setBlock(
-                            x + dx,
-                            top + dy,
-                            z + dz,
-                            Block.OAK_LEAVES
-                        )
-                    }
-                }
-    }
-
-    private fun placeVegetation(unit: GenerationUnit, x: Int, y: Int, z: Int) {
-
-        val roll = Math.random()
-
-        if (roll < FLOWER_CHANCE) {
-            val flower = when ((0..4).random()) {
-                0 -> Block.POPPY
-                1 -> Block.DANDELION
-                2 -> Block.AZURE_BLUET
-                3 -> Block.OXEYE_DAISY
-                else -> Block.CORNFLOWER
-            }
-
-            unit.modifier().setBlock(x, y, z, flower)
-            return
-        }
-
-        if (roll < TALL_GRASS_CHANCE) {
-            unit.modifier().setBlock(x, y, z, Block.TALL_GRASS.withProperty("half", "lower"))
-            unit.modifier().setBlock(x, y + 1, z, Block.TALL_GRASS.withProperty("half", "upper"))
-            return
-        }
-
-        unit.modifier().setBlock(x, y, z, Block.SHORT_GRASS)
-    }
-
-    private fun placeSeagrass(unit: GenerationUnit, x: Int, terrainHeight: Int, z: Int) {
-
-        val depth = WATER_LEVEL - terrainHeight
-
-        if (depth < MIN_WATER_DEPTH) return
-
-        val floorY = terrainHeight
-
-        val plantY = floorY
-
-        if (depth <= 3) return
-
-        if (Math.random() < SEAGRASS_CHANCE) {
-            unit.modifier().setBlock(x, plantY, z, Block.SEAGRASS)
-        }
-
-        if (depth >= 5 && Math.random() < TALL_SEAGRASS_CHANCE) {
-            unit.modifier().setBlock(x, plantY, z, Block.TALL_SEAGRASS)
-        }
-
-        if (depth > 6 && Math.random() < 0.08) {
-            val height = (2..5).random()
-            for (i in 0 until height) {
-                unit.modifier().setBlock(x, plantY + i, z, Block.KELP_PLANT)
-            }
-        }
     }
 }

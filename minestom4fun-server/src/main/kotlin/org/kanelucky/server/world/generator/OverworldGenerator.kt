@@ -4,7 +4,9 @@ import net.minestom.server.instance.generator.GenerationUnit
 import net.minestom.server.instance.generator.Generator
 
 import org.kanelucky.server.config.ConfigManager
-import org.kanelucky.server.world.generator.decoration.VegetationDecorator
+import org.kanelucky.server.world.generator.features.decoration.SeagrassDecorator
+import org.kanelucky.server.world.generator.features.decoration.VegetationDecorator
+import org.kanelucky.server.world.generator.features.`object`.TreeGenerator
 import org.kanelucky.server.world.generator.noise.FastNoise
 import org.kanelucky.server.world.generator.terrain.BaseTerrain
 import org.kanelucky.server.world.generator.terrain.CaveCarver
@@ -32,11 +34,18 @@ class OverworldGenerator : Generator {
     private val riverNoise = FastNoise(ConfigManager.serverSettings.seed)
     private val rivers = RiverCarver(riverNoise)
     private val vegetation = VegetationDecorator()
+    private val seagrass = SeagrassDecorator()
+
 
     override fun generate(unit: GenerationUnit) {
-        terrain.build(unit)
-        caves.carve(unit)
-        rivers.carve(unit)
-        vegetation.decorate(unit)
+        val start = unit.absoluteStart()
+        val baseX = start.blockX()
+        val baseZ = start.blockZ()
+        val heights = terrain.build(unit)
+
+        caves.carve(unit, heights, baseX, baseZ)
+        rivers.carve(unit, heights, baseX, baseZ)
+        seagrass.decorate(unit, heights, baseX, baseZ)
+        vegetation.decorate(unit, heights, baseX, baseZ)
     }
 }

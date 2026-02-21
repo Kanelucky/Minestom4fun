@@ -5,6 +5,8 @@ plugins {
 
 group = "org.kanelucky"
 version = "0.1.3"
+description = "A Minecraft: Java Edition server software built on top of Minestom, " +
+        "designed to do what Minestom was never meant for: Survival"
 
 tasks.named<Jar>("jar") {
     enabled = false

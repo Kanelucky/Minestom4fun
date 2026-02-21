@@ -64,10 +64,8 @@
 
 ### Steps
 1. Download the latest release from [Releases](https://github.com/Kanelucky/Minestom4fun/releases) or build from source
-2. Run the server:
-```bash
-java --enable-native-access=ALL-UNNAMED -XX:+UnlockDiagnosticVMOptions -jar minestom4fun-server-*-shaded.jar nogui
-```
+2. Get your start script [here](https://github.com/Kanelucky/Minestom4fun/tree/master/scripts)
+3. Run the server with that start script
 
 ## Credits
 

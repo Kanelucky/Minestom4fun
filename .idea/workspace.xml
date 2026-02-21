@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f27d29c-bdb1-452c-b338-fe39f24b9195" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/error/CommandInvalidUsageHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/error/UnknownCommandHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/log/ServerStartupLog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/text/prefix/commands/error/ErrorCommandPrefix.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/FragileBlocks.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/WorldBlockRegistry.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/BlockDropHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/FragileBlockHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/GrassDropHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/rates/DropRates.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/UnknownCommandHandler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/KillCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/KillCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/world/WorldSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/world/WorldSettings.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/block/BlockBreakEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/block/BlockBreakEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/player/PlayerDeathEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/player/PlayerDeathEvent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionsHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionsHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/ServerPermissionResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/ServerPermissionResolver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/text/prefix/commands/defaults/DefaultCommandPrefix.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/text/prefix/commands/defaults/DefaultCommandPrefix.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

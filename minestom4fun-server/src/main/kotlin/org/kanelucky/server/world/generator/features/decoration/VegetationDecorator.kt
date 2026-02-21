@@ -4,7 +4,7 @@ import net.minestom.server.instance.block.Block
 import net.minestom.server.instance.generator.GenerationUnit
 
 import org.kanelucky.server.world.generator.WorldConstants
-import org.kanelucky.server.world.generator.features.`object`.TreeGenerator
+import org.kanelucky.server.world.generator.features.objects.TreeGenerator
 
 import kotlin.random.Random
 

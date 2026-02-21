@@ -1,10 +1,9 @@
-package org.kanelucky.server.events.player
+package org.kanelucky.server.events.server
 
 import net.minestom.server.MinecraftServer
 import net.minestom.server.coordinate.Pos
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent
-
-import org.kanelucky.server.Minestom4fun.instanceContainer
+import org.kanelucky.server.Minestom4fun
 
 /**
  * @author Kanelucky
@@ -15,7 +14,7 @@ object PlayerSpawnEvent {
         MinecraftServer.getGlobalEventHandler()
             .addListener(AsyncPlayerConfigurationEvent::class.java) { event ->
 
-                val instance = instanceContainer
+                val instance = Minestom4fun.instanceContainer
                 event.spawningInstance = instance
 
                 val chunk = instance.loadChunk(0, 0).join()

@@ -43,5 +43,32 @@ This file documents the evolution of Minestom4fun during the 0.1.x series.
   - Add **PermissionsHandler.kt**.
   - Add **PermissionResolvers.kt**.
 ## 0.1.3 - Unrelease
+### Commands
+  - Implement **/op** command
+### Events
+  - Rename **event** folder to **events** folder
+  - Move **PlayerJoinEvent.kt**, **PlayerQuitEvent.kt**, **PlayerSpawnEvent.kt** to **events/server** folder
+### Permission
+  - Implement **permission** **resolver**
+  - Add **missing** **permission** message
+### World
+  - Add **noise** folder
+    - Add **ClimateNoise.kt**, **FastNoise.kt**, **RiverNoise.kt**, **TerrainNoise.kt**, **NoiseConfig.kt** 
+  - Add **terrain** folder
+    - Add **BaseTerrain.kt**, **CaveCarver.kt**, **RiverCarver.kt**
+  - Add **biomes** folder
+    - Add **Biome.kt**, **BiomeProvider.kt**, **BiomeRegistry.kt**
+  - Add **WorldConstants.kt**
+  - Add **features** folder
+    -  Add **decoration** folder
+       -  Add **SeagrassDecoration.kt**, **VegetationDecoration.kt**
+    - Add **object** folder
+       - Add **TreeGenerator.kt**
+  - Implement **world** **generation**
+![0.1.3_WorldGeneration-plain.png](picture/0.1.3_WorldGeneration-plain.png)
+![0.1.3_WorldGeneration-beach.png](picture/0.1.3_WorldGeneration-beach.png)
+![0.1.3_WorldGeneration-cave.png](picture/0.1.3_WorldGeneration-cave.png)
+
+
 
 

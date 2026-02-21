@@ -4,21 +4,17 @@ import net.minestom.server.instance.block.Block
 import net.minestom.server.instance.generator.GenerationUnit
 import net.minestom.server.instance.generator.Generator
 
-import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.world.generator.WorldConstants.AMP
 import org.kanelucky.server.world.generator.WorldConstants.BASE_HEIGHT
 import org.kanelucky.server.world.generator.WorldConstants.FREQ
-import org.kanelucky.server.world.generator.WorldConstants.TREE_CHANCE
 import org.kanelucky.server.world.generator.WorldConstants.WATER_LEVEL
 import org.kanelucky.server.world.generator.features.decoration.SeagrassDecorator
 import org.kanelucky.server.world.generator.noise.FastNoise
-import org.kanelucky.server.world.generator.features.`object`.TreeGenerator
+import org.kanelucky.server.world.generator.features.objects.TreeGenerator
 import org.kanelucky.server.world.generator.features.decoration.VegetationDecorator
 import org.kanelucky.server.world.generator.noise.NoiseConfig
 import org.kanelucky.server.world.generator.terrain.CaveCarver
 import org.kanelucky.server.world.generator.terrain.RiverCarver
-
-import kotlin.random.Random
 
 class NormalGenerator : Generator {
 

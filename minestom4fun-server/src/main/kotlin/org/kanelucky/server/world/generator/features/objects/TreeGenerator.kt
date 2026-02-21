@@ -1,4 +1,4 @@
-package org.kanelucky.server.world.generator.features.`object`
+package org.kanelucky.server.world.generator.features.objects
 
 import net.minestom.server.instance.block.Block
 import net.minestom.server.instance.generator.GenerationUnit

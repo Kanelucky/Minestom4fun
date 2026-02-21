@@ -6,7 +6,6 @@ import net.minestom.server.instance.generator.Generator
 import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.world.generator.features.decoration.SeagrassDecorator
 import org.kanelucky.server.world.generator.features.decoration.VegetationDecorator
-import org.kanelucky.server.world.generator.features.`object`.TreeGenerator
 import org.kanelucky.server.world.generator.noise.FastNoise
 import org.kanelucky.server.world.generator.terrain.BaseTerrain
 import org.kanelucky.server.world.generator.terrain.CaveCarver

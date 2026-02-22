@@ -85,4 +85,3 @@ cd Minestom4fun
 ## Credits
 
 - [<img src="https://raw.githubusercontent.com/XDPXI/SwiftMC-Website/refs/heads/main/favicon.png" width="16"/>](https://github.com/XDPXI/SwiftMC) [SwiftMC](https://github.com/XDPXI/SwiftMC)
-- [<img src="https://raw.githubusercontent.com/AllayMC/Allay/refs/heads/master/server/src/main/resources/icon.png" width="16"/>](https://github.com/AllayMC/Allay) [AllayMC](https://github.com/AllayMC/Allay)

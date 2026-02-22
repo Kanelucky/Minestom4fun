@@ -39,6 +39,7 @@ dependencies {
     implementation("dev.rollczi:litecommands-minestom:3.10.9")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
     implementation("com.charleskorn.kaml:kaml:0.61.0")
+    implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.1")
     implementation(files("libs/worldgen-0.1.0.jar"))
     implementation(files("libs/MinestomFluids.jar"))
 

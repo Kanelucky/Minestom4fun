@@ -8,12 +8,9 @@ import dev.rollczi.litecommands.platform.PlatformSender
 import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.Player
 
-class ServerPermissionResolver : PermissionResolver {
+import org.kanelucky.server.permission.PublicPermissionList.PUBLIC_PERMISSIONS
 
-    private val PUBLIC_PERMISSIONS = setOf(
-        "minestom4fun.commands.defaults.version",
-        "minestom4fun.commands.defaults.tps"
-    )
+class ServerPermissionResolver : PermissionResolver {
 
     private val delegate = PermissionResolver.createDefault(CommandSender::class.java) { sender, permission ->
         if (permission in PUBLIC_PERMISSIONS) return@createDefault true

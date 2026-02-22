@@ -39,6 +39,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
     implementation("com.charleskorn.kaml:kaml:0.61.0")
     implementation(files("libs/worldgen-0.1.0.jar"))
+    implementation(files("libs/MinestomFluids.jar"))
 
     compileOnly("net.kyori:adventure-api:4.26.1")
 }

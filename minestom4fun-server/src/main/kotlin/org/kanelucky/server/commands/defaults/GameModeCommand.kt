@@ -31,7 +31,7 @@ class GameModeCommand {
         val msgMode = Component.text()
             .append(COMMAND_DEFAULTS)
             .append(Component.text("Gamemode set to ", NamedTextColor.GREEN))
-            .append(Component.text(mode.name, NamedTextColor.YELLOW))
+            .append(Component.text(mode.name.lowercase(), NamedTextColor.YELLOW))
             .build()
 
         player.sendMessage(msgMode)
@@ -49,7 +49,7 @@ class GameModeCommand {
         val msgMode = Component.text()
             .append(COMMAND_DEFAULTS)
             .append(Component.text("Your GameModeCommand has been set to ", NamedTextColor.GREEN))
-            .append(Component.text(mode.name, NamedTextColor.YELLOW))
+            .append(Component.text(mode.name.lowercase(), NamedTextColor.YELLOW))
             .build()
 
         val msgTarget = Component.text()

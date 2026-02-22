@@ -5,5 +5,5 @@ package org.kanelucky.server.config.network
  */
 data class NetworkSettings(
     var serverBrand: String = "Minestom4fun",
-    val motd: String = "Welcome to my Minecraft server!"
+    val motd: String = "Welcome to my Minecraft server!",
 )

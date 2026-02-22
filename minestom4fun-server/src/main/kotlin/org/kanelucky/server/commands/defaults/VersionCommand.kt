@@ -19,12 +19,13 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.C
 @Command(name = "version", aliases = ["ver"])
 @Permission("minestom4fun.commands.defaults.version")
 class VersionCommand {
+
+    val version: String = this::class.java.`package`.implementationVersion ?: "dev"
+
     @Execute
     fun execute(
         @Context sender: CommandSender
     ) {
-
-        val version: String = this::class.java.`package`.implementationVersion ?: "dev"
 
         val minestomVersion = MinecraftServer.VERSION_NAME
 

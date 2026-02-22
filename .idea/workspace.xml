@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f27d29c-bdb1-452c-b338-fe39f24b9195" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandList.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/argument/GameModeArgument.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/HelpCommand.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/StatusCommand.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PublicPermissionList.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/handler/PermissionsHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/fluid/FluidEventHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/network/NetworkSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/network/NetworkSettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/PermissionsHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/ServerPermissionResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/permission/ServerPermissionResolver.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +61,7 @@
     &quot;accountId&quot;: &quot;b1f0f8c4-eb0e-40a9-a43d-2a67a12a6c09&quot;
   }
 }</component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Lecoo\.gradle\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="C:\Program Files\Java\jdk-21" gradleVersion="8.14" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Lecoo\.gradle\wrapper\dists\gradle-9.0.0-bin\d6wjpkvcgsg3oed0qlfss3wgl\gradle-9.0.0" javaHome="C:\Users\Lecoo\Downloads\graalvm-jdk-25_windows-x64_bin\graalvm-jdk-25.0.2+10.1" gradleVersion="9.0.0" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -73,11 +93,11 @@
   </component>
   <component name="RecentsManager">
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="org.kanelucky.server.permission.handler" />
       <recent name="org.kanelucky.server.commands.error" />
       <recent name="org.kanelucky.server.world.blocks.handler" />
       <recent name="org.kanelucky.server.events.server" />
       <recent name="org.kanelucky.server.world.generator.features.decoration" />
-      <recent name="org.kanelucky.server.world.generator.noise" />
     </key>
   </component>
   <component name="RunManager">

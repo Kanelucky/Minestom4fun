@@ -1,4 +1,4 @@
-package org.kanelucky.server.permission
+package org.kanelucky.server.permission.handler
 
 import dev.rollczi.litecommands.handler.result.ResultHandlerChain
 import dev.rollczi.litecommands.invocation.Invocation
@@ -10,7 +10,7 @@ import net.kyori.adventure.text.format.NamedTextColor
 
 import net.minestom.server.command.CommandSender
 
-import org.kanelucky.server.text.prefix.commands.error.ErrorCommandPrefix.COMMAND_ERROR
+import org.kanelucky.server.text.prefix.commands.error.ErrorCommandPrefix
 
 /**
  * @author Kanelucky
@@ -23,7 +23,7 @@ class PermissionsHandler : MissingPermissionsHandler<CommandSender> {
     ) {
         invocation.sender().sendMessage(
             Component.text()
-                .append(COMMAND_ERROR)
+                .append(ErrorCommandPrefix.COMMAND_ERROR)
                 .append(Component.text("You don't have permission to use this command", NamedTextColor.RED))
                 .build()
         )

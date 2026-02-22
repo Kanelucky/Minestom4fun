@@ -30,6 +30,7 @@ import io.github.togar2.fluids.WaterlogHandler
 import net.minestom.server.entity.GameMode
 import net.minestom.server.event.player.PlayerBlockInteractEvent
 import net.minestom.server.item.ItemStack
+import org.kanelucky.server.gui.Dashboard
 import org.kanelucky.server.world.fluid.FluidEventHandler
 
 import java.nio.file.Files
@@ -52,7 +53,7 @@ object Minestom4fun {
 
         ConfigManager.init()
 
-        ServerStartupLog.print()
+        val dashboard = Dashboard.getInstance()
 
         minecraftServer = MinecraftServer.init()
 
@@ -103,6 +104,9 @@ object Minestom4fun {
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
 
+        dashboard.afterServerStarted()
+
+        ServerStartupLog.print()
         ServerStartupLog.done()
     }
 }

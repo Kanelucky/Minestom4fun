@@ -30,6 +30,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.5.24")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.snakeyaml:snakeyaml-engine:2.7")
+    implementation("com.formdev:flatlaf:3.4")
 
     implementation("net.minestom:minestom:2026.02.09-1.21.11")
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")

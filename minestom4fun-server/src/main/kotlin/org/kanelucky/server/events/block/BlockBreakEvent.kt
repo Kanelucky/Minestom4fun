@@ -20,20 +20,25 @@ object BlockBreakEvent {
         val node = EventNode.all("block-drop-on-break")
 
         node.addListener(PlayerBlockBreakEvent::class.java) { event ->
-
             val player = event.player
 
+            if (player.gameMode == GameMode.CREATIVE) return@addListener
+
             event.block.registry()?.material()?.let { material ->
-
                 val itemEntity = ItemEntity(ItemStack.of(material))
-
                 itemEntity.setPickupDelay(Duration.ofMillis(500))
+
+                val random = java.util.Random()
+                itemEntity.velocity = net.minestom.server.coordinate.Vec(
+                    (random.nextDouble() - 0.5) * 0.1 * 20,
+                    0.2 * 20,
+                    (random.nextDouble() - 0.5) * 0.1 * 20
+                )
 
                 itemEntity.setInstance(
                     event.instance,
                     event.blockPosition.add(0.5, 0.5, 0.5)
                 )
-
             }
         }
 

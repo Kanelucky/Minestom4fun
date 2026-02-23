@@ -20,7 +20,9 @@ IF "%JAR_FILE%"=="" (
     exit /b 1
 )
 
-java --enable-native-access=ALL-UNNAMED ^
+set JAVA_CMD=java
+
+%JAVA_CMD% --enable-native-access=ALL-UNNAMED ^
     -XX:+UseZGC ^
     -XX:+ZGenerational ^
     -XX:+UseStringDeduplication ^

@@ -15,6 +15,7 @@ import org.kanelucky.gui.Dashboard
 import org.kanelucky.server.commands.CommandRegistry
 import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.config.ConfigManager.serverSettings
+import org.kanelucky.server.config.world.WorldType
 import org.kanelucky.server.events.EventRegistry
 import org.kanelucky.server.log.ServerStartupLog
 import org.kanelucky.server.network.NetworkRegistry
@@ -22,6 +23,12 @@ import org.kanelucky.server.terminal.ServerTerminalConsole
 import org.kanelucky.server.world.blocks.WorldBlockRegistry
 import org.kanelucky.server.world.generator.NormalGenerator
 import org.kanelucky.server.world.fluid.FluidEventHandler
+import org.kanelucky.server.world.generator.OverworldGenerator
+import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatGenerator
+import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.BottomlessPit
+import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.ClassicFlat
+import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.SnowyKingdom
+import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.Void
 
 import java.nio.file.Files
 import java.nio.file.Path
@@ -56,14 +63,33 @@ object Minestom4fun {
         instanceContainer.setChunkLoader(PolarLoader(polarPath))
 
         // Set the ChunkGenerator
-        instanceContainer.setGenerator(NormalGenerator())
+        val generator = when (ConfigManager.worldSettings.worldType) {
+            WorldType.NORMAL -> OverworldGenerator()
+            WorldType.SUPERFLAT -> {
+                val preset = when (ConfigManager.worldSettings.superflat.preset) {
+                    "classic" -> ClassicFlat()
+                    "bottomless_pit" -> BottomlessPit()
+                    "snowy_kingdom" -> SnowyKingdom()
+                    "void" -> Void()
+                    else -> ClassicFlat()
+                }
+                SuperFlatGenerator(preset)
+            }
+        }
+        instanceContainer.setGenerator(generator)
 
         instanceContainer.setChunkSupplier(::LightingChunk)
 
         globalEventHandler = MinecraftServer.getGlobalEventHandler()
 
+        WorldBlockRegistry.initialize()
+
         // Register events
         EventRegistry.register(handler = globalEventHandler)
+
+        MinestomFluids.init()
+        FluidEventHandler.register(globalEventHandler)
+        MinecraftServer.getGlobalEventHandler().addChild(MinestomFluids.events())
 
         // Register commands
         CommandRegistry.initialize()
@@ -76,8 +102,6 @@ object Minestom4fun {
         // Network
         NetworkRegistry.initialize()
 
-        WorldBlockRegistry.initialize()
-
         // Saving world
         instanceContainer.saveChunksToStorage()
 
@@ -86,10 +110,6 @@ object Minestom4fun {
         val console = commandManager.consoleSender
 
         ServerTerminalConsole().startConsole(dispatcher, console)
-
-        MinestomFluids.init()
-        FluidEventHandler.register(globalEventHandler)
-        MinecraftServer.getGlobalEventHandler().addChild(MinestomFluids.events())
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
 

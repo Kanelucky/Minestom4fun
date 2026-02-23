@@ -32,16 +32,19 @@ dependencies {
     implementation("org.snakeyaml:snakeyaml-engine:2.7")
     implementation("com.formdev:flatlaf:3.4")
 
+
     implementation("net.minestom:minestom:2026.02.09-1.21.11")
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")
     implementation("dev.hollowcube:polar:1.15.0")
     implementation("dev.hollowcube:schem:2.0.1")
     implementation("dev.rollczi:litecommands-minestom:3.10.9")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("com.charleskorn.kaml:kaml:0.61.0")
-    implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.1")
+    //implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.1")
     implementation(files("libs/worldgen-0.1.0.jar"))
     implementation(files("libs/MinestomFluids.jar"))
+    implementation(files("libs/minestom-dashboard-0.1.1.jar"))
 
     compileOnly("net.kyori:adventure-api:4.26.1")
 }

@@ -5,14 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f27d29c-bdb1-452c-b338-fe39f24b9195" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/player/data/PlayerDataManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelogs/0.1.x/CHANGELOG-0.1.md" beforeDir="false" afterPath="$PROJECT_DIR$/changelogs/0.1.x/CHANGELOG-0.1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minestom4fun-server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/Minestom4fun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/gui/ANSIColor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/gui/ConsolePanel.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/gui/Dashboard.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/gui/GraphPanel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/CommandRegistry.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/GameModeCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/HelpCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/HelpCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/KillCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/KillCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/OpCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/StatusCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/StatusCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/TPSCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/commands/defaults/VersionCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/ConfigManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/ConfigManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/network/NetworkSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/network/NetworkSettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/server/ServerSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/server/ServerSettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/world/WorldSettings.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/config/world/WorldSettings.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/block/BlockBreakEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/block/BlockBreakEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/server/PlayerJoinEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/server/PlayerJoinEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/server/PlayerQuitEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/server/PlayerQuitEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/server/PlayerSpawnEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/events/server/PlayerSpawnEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/player/PlayerDataManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/BlockDropHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/BlockDropHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/GrassDropHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/kotlin/org/kanelucky/server/world/blocks/handler/GrassDropHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minestom4fun-server/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/minestom4fun-server/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,78 +82,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="QodanaCIConfigService">
     <option name="path" value="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lecoo\IdeaProjects\Minestom4fun\minestom4fun-server\src\main\kotlin\org\kanelucky\server" />
+    </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="org.kanelucky.server.player.data" />
       <recent name="org.kanelucky.server.permission.handler" />
       <recent name="org.kanelucky.server.commands.error" />
       <recent name="org.kanelucky.server.world.blocks.handler" />
       <recent name="org.kanelucky.server.events.server" />
-      <recent name="org.kanelucky.server.world.generator.features.decoration" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Minestom4fun" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Minestom4fun" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="Minestom4fun" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="Minestom4fun" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

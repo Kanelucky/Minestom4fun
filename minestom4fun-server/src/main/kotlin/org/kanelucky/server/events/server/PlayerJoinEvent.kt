@@ -2,9 +2,6 @@ package org.kanelucky.server.events.server
 
 import net.kyori.adventure.text.Component
 import net.minestom.server.MinecraftServer
-import net.minestom.server.entity.Player
-import net.minestom.server.event.player.PlayerSpawnEvent
-import org.kanelucky.server.text.prefix.events.player.PlayerEventPrefix
 import org.kanelucky.server.text.prefix.events.server.ServerEventPrefix
 
 /**
@@ -14,12 +11,10 @@ object PlayerJoinEvent {
     @JvmStatic
     fun register() {
         MinecraftServer.getGlobalEventHandler()
-            .addListener(PlayerSpawnEvent::class.java) { event ->
-
+            .addListener(net.minestom.server.event.player.PlayerSpawnEvent::class.java) { event ->
                 if (!event.isFirstSpawn) return@addListener
 
-                val player: Player = event.player
-
+                val player = event.player
                 val msg = Component.text()
                     .append(ServerEventPrefix.EVENT_SERVER)
                     .append(Component.text(player.username))
@@ -27,7 +22,6 @@ object PlayerJoinEvent {
                     .build()
 
                 MinecraftServer.LOGGER.info(msg)
-
                 MinecraftServer.getConnectionManager().onlinePlayers.forEach { it.sendMessage(msg) }
             }
     }

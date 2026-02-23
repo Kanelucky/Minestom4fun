@@ -4,7 +4,7 @@ import net.kyori.adventure.text.Component
 import net.minestom.server.MinecraftServer
 import net.minestom.server.entity.Player
 import net.minestom.server.event.player.PlayerDisconnectEvent
-import org.kanelucky.server.text.prefix.events.player.PlayerEventPrefix
+import org.kanelucky.server.player.data.PlayerDataManager
 import org.kanelucky.server.text.prefix.events.server.ServerEventPrefix
 
 /**
@@ -27,6 +27,8 @@ object PlayerQuitEvent {
                 MinecraftServer.LOGGER.info(msg)
 
                 MinecraftServer.getConnectionManager().onlinePlayers.forEach { it.sendMessage(msg) }
+
+                PlayerDataManager.save(player)
             }
     }
 }

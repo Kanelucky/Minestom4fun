@@ -2,7 +2,9 @@ package org.kanelucky.server.commands.defaults
 
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
+import dev.rollczi.litecommands.annotations.description.Description
 import dev.rollczi.litecommands.annotations.execute.Execute
+import dev.rollczi.litecommands.annotations.permission.Permission
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -17,6 +19,8 @@ import org.kanelucky.server.config.ConfigManager
  * @author Kanelucky
  */
 @Command(name = "status")
+@Description("Gets the current status of the server")
+@Permission("minestom4fun.commands.defaults.status")
 class StatusCommand {
 
     @Execute

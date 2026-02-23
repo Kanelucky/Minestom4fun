@@ -6,7 +6,6 @@ import net.minestom.server.event.Event
 import net.minestom.server.event.EventNode
 import net.minestom.server.event.player.PlayerBlockBreakEvent
 import net.minestom.server.item.ItemStack
-import org.kanelucky.server.events.server.PlayerQuitEvent
 
 import java.time.Duration
 
@@ -20,9 +19,8 @@ object BlockBreakEvent {
         val node = EventNode.all("block-drop-on-break")
 
         node.addListener(PlayerBlockBreakEvent::class.java) { event ->
-            val player = event.player
 
-            if (player.gameMode == GameMode.CREATIVE) return@addListener
+            val player = event.player
 
             event.block.registry()?.material()?.let { material ->
                 val itemEntity = ItemEntity(ItemStack.of(material))

@@ -3,6 +3,7 @@ package org.kanelucky.server.commands.defaults
 import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
+import dev.rollczi.litecommands.annotations.description.Description
 import dev.rollczi.litecommands.annotations.execute.Execute
 import dev.rollczi.litecommands.annotations.permission.Permission
 
@@ -18,6 +19,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.C
  * @author Kanelucky
  */
 @Command(name = "op")
+@Description("Grants operator status to a player")
 @Permission("minestom4fun.commands.defaults.op")
 class OpCommand {
     @Execute

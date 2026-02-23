@@ -22,8 +22,10 @@ object GrassDropHandler {
             .addListener(PlayerBlockBreakEvent::class.java) { event ->
                 val instance = event.player.instance ?: return@addListener
 
-                if (event.block != Block.SHORT_GRASS && event.block != Block.TALL_GRASS)
-                    return@addListener
+                if (event.block != Block.SHORT_GRASS && event.block != Block.TALL_GRASS) return@addListener
+
+                event.isCancelled = true
+                instance.setBlock(event.blockPosition, Block.AIR)
 
                 if (Random.Default.nextFloat() > SEED_DROP_CHANCE) return@addListener
 

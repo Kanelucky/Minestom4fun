@@ -3,6 +3,7 @@ package org.kanelucky.server.commands.defaults
 import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Sender
+import dev.rollczi.litecommands.annotations.description.Description
 import dev.rollczi.litecommands.annotations.execute.Execute
 import dev.rollczi.litecommands.annotations.permission.Permission
 
@@ -13,6 +14,7 @@ import net.minestom.server.entity.Player
 import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.COMMAND_DEFAULTS
 
 @Command(name = "kill")
+@Description("Kills entities (players, mobs, items, etc.)")
 @Permission("minestom4fun.commands.defaults.kill")
 class KillCommand {
 

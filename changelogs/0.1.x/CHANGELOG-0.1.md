@@ -44,7 +44,8 @@ This file documents the evolution of Minestom4fun during the 0.1.x series.
   - Add **PermissionResolvers.kt**.
 ## 0.1.3 - Unrelease
 ### Commands
-  - Implement **/op** command
+  - Implement **/op**, **/gamemode** command
+  - Add **/kill**, **/status**, **/help** commamd
 ### Events
   - Rename **event** folder to **events** folder
   - Move **PlayerJoinEvent.kt**, **PlayerQuitEvent.kt**, **PlayerSpawnEvent.kt** to **events/server** folder

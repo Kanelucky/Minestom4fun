@@ -3,6 +3,7 @@ package org.kanelucky.server.commands.defaults
 import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
 import dev.rollczi.litecommands.annotations.context.Context
+import dev.rollczi.litecommands.annotations.description.Description
 import dev.rollczi.litecommands.annotations.execute.Execute
 import dev.rollczi.litecommands.annotations.permission.Permission
 
@@ -19,6 +20,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.C
  * @author Kanelucky
  */
 @Command(name = "gamemode", aliases = ["gm"])
+@Description("Sets a player's game mode")
 @Permission("minestom4fun.commands.defaults.gamemode")
 class GameModeCommand {
     @Execute

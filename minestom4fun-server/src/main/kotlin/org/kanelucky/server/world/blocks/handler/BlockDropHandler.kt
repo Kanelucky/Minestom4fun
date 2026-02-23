@@ -18,17 +18,35 @@ object BlockDropHandler {
     fun register() {
         MinecraftServer.getGlobalEventHandler()
             .addListener(PlayerBlockBreakEvent::class.java) { event ->
+                if (event.player.gameMode == GameMode.CREATIVE) {
+                    event.isCancelled = true
+                    event.player.instance?.setBlock(event.blockPosition, Block.AIR)
+                    return@addListener
+                }
+            }
+
+        MinecraftServer.getGlobalEventHandler()
+            .addListener(PlayerBlockBreakEvent::class.java) { event ->
                 val player = event.player
                 val instance = player.instance ?: return@addListener
 
+                if (player.gameMode == GameMode.CREATIVE) return@addListener
                 if (event.block !in FragileBlocks.FRAGILE_BLOCKS) return@addListener
 
                 event.isCancelled = true
                 instance.setBlock(event.blockPosition, Block.AIR)
 
-                if (player.gameMode == GameMode.CREATIVE) return@addListener
                 if (hasSilkTouch(player)) return@addListener
+
+                val drop = getDropForBlock(event.block) ?: return@addListener
+                val itemEntity = net.minestom.server.entity.ItemEntity(drop)
+                itemEntity.setInstance(instance, event.blockPosition.asVec().add(0.5, 0.5, 0.5))
             }
+    }
+
+    private fun getDropForBlock(block: Block): net.minestom.server.item.ItemStack? {
+        val material = net.minestom.server.item.Material.fromKey(block.key()) ?: return null
+        return net.minestom.server.item.ItemStack.of(material)
     }
 
     private fun hasSilkTouch(player: Player): Boolean {

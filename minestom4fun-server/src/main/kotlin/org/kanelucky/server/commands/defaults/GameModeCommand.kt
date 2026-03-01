@@ -19,7 +19,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.C
 /**
  * @author Kanelucky
  */
-@Command(name = "gamemode", aliases = ["gm"])
+@Command(name = "gamemode")
 @Description("Sets a player's game mode")
 @Permission("minestom4fun.commands.defaults.gamemode")
 class GameModeCommand {
@@ -30,10 +30,12 @@ class GameModeCommand {
     ) {
         player.setGameMode(mode)
 
+        val formattedMode = mode.name.substring(0, 1).uppercase() + mode.name.substring(1).lowercase()
+
         val msgMode = Component.text()
-            .append(COMMAND_DEFAULTS)
-            .append(Component.text("Gamemode set to ", NamedTextColor.GREEN))
-            .append(Component.text(mode.name.lowercase(), NamedTextColor.YELLOW))
+            .append(Component.text("Set own game mode to "))
+            .append(Component.text(formattedMode))
+            .append(Component.text(" Mode"))
             .build()
 
         player.sendMessage(msgMode)
@@ -48,19 +50,17 @@ class GameModeCommand {
 
         target.setGameMode(mode)
 
-        val msgMode = Component.text()
-            .append(COMMAND_DEFAULTS)
-            .append(Component.text("Your GameModeCommand has been set to ", NamedTextColor.GREEN))
-            .append(Component.text(mode.name.lowercase(), NamedTextColor.YELLOW))
-            .build()
+        val formattedMode = mode.name.substring(0, 1).uppercase() + mode.name.substring(1).lowercase()
 
         val msgTarget = Component.text()
-            .append(COMMAND_DEFAULTS)
-            .append(Component.text("Set GameModeCommand of ", NamedTextColor.GREEN))
-            .append(Component.text(target.username, NamedTextColor.YELLOW))
+            .append(Component.text("Your game mode has been updated to "))
+            .append(Component.text(formattedMode))
+            .append(Component.text(" Mode"))
             .build()
 
-        target.sendMessage(msgMode)
-        sender.sendMessage(msgTarget)
+        val msgMode = "Set ${target.username}'s game mode to $formattedMode Mode"
+
+        target.sendMessage(msgTarget)
+        sender.sendMessage(msgMode)
     }
 }

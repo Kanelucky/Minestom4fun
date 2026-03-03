@@ -7,14 +7,9 @@ import dev.rollczi.litecommands.annotations.description.Description
 import dev.rollczi.litecommands.annotations.execute.Execute
 import dev.rollczi.litecommands.annotations.permission.Permission
 
-import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.format.NamedTextColor
-
 import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.Player
-
-import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.COMMAND_DEFAULTS
 
 /**
  * @author Kanelucky
@@ -23,6 +18,9 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.C
 @Description("Sets a player's game mode")
 @Permission("minestom4fun.commands.defaults.gamemode")
 class GameModeCommand {
+
+    private fun GameMode.formatted() = name.lowercase().replaceFirstChar { it.uppercase() }
+
     @Execute
     fun self(
         @Context player: Player,
@@ -30,13 +28,7 @@ class GameModeCommand {
     ) {
         player.setGameMode(mode)
 
-        val formattedMode = mode.name.substring(0, 1).uppercase() + mode.name.substring(1).lowercase()
-
-        val msgMode = Component.text()
-            .append(Component.text("Set own game mode to "))
-            .append(Component.text(formattedMode))
-            .append(Component.text(" Mode"))
-            .build()
+        val msgMode = "Set own game mode to ${mode.formatted()} Mode"
 
         player.sendMessage(msgMode)
     }
@@ -52,13 +44,9 @@ class GameModeCommand {
 
         val formattedMode = mode.name.substring(0, 1).uppercase() + mode.name.substring(1).lowercase()
 
-        val msgTarget = Component.text()
-            .append(Component.text("Your game mode has been updated to "))
-            .append(Component.text(formattedMode))
-            .append(Component.text(" Mode"))
-            .build()
+        val msgTarget = "Your game mode has been updated to ${mode.formatted()} Mode"
 
-        val msgMode = "Set ${target.username}'s game mode to $formattedMode Mode"
+        val msgMode = "Set ${target.username}'s game mode to ${mode.formatted()} Mode"
 
         target.sendMessage(msgTarget)
         sender.sendMessage(msgMode)

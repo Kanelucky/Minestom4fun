@@ -1,6 +1,5 @@
 package org.kanelucky.server.events.block
 
-import net.minestom.server.entity.GameMode
 import net.minestom.server.entity.ItemEntity
 import net.minestom.server.event.Event
 import net.minestom.server.event.EventNode

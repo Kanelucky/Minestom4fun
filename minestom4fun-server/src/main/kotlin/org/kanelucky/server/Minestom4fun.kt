@@ -7,15 +7,19 @@ import io.github.togar2.pvp.feature.CombatFeatures
 import net.hollowcube.polar.PolarLoader
 
 import net.minestom.server.MinecraftServer
+import net.minestom.server.coordinate.Pos
 import net.minestom.server.event.GlobalEventHandler
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.LightingChunk
+
 import org.kanelucky.gui.Dashboard
 
 import org.kanelucky.server.commands.CommandRegistry
 import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.config.ConfigManager.serverSettings
 import org.kanelucky.server.config.world.WorldType
+import org.kanelucky.server.entity.ai.EntityAI
+import org.kanelucky.server.entity.passive.EntitySheep
 import org.kanelucky.server.events.EventRegistry
 import org.kanelucky.server.log.ServerStartupLog
 import org.kanelucky.server.network.NetworkRegistry
@@ -47,6 +51,8 @@ object Minestom4fun {
     @JvmStatic
     fun main() {
 
+        ServerStartupLog.start()
+
         ConfigManager.init()
 
         val dashboard = Dashboard.getInstance()
@@ -64,7 +70,7 @@ object Minestom4fun {
 
         // Set the ChunkGenerator
         val generator = when (ConfigManager.worldSettings.worldType) {
-            WorldType.NORMAL -> OverworldGenerator()
+            WorldType.NORMAL -> NormalGenerator()
             WorldType.SUPERFLAT -> {
                 val preset = when (ConfigManager.worldSettings.superflat.preset) {
                     "classic" -> ClassicFlat()
@@ -112,6 +118,10 @@ object Minestom4fun {
         ServerTerminalConsole().startConsole(dispatcher, console)
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
+
+        val sheep = EntitySheep()
+        sheep.setInstance(instanceContainer, Pos(5.0, 65.0, 5.0))
+        EntityAI.enableDebug(EntityAI.DebugOption.CONTROLLER)
 
         dashboard.afterServerStarted()
 

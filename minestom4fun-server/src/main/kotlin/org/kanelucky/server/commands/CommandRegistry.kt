@@ -5,9 +5,12 @@ import dev.rollczi.litecommands.minestom.LiteMinestomFactory
 
 import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.GameMode
+import net.minestom.server.item.Material
 import org.kanelucky.server.commands.argument.GameModeArgument
+import org.kanelucky.server.commands.argument.MaterialArgument
 
 import org.kanelucky.server.commands.defaults.GameModeCommand
+import org.kanelucky.server.commands.defaults.GiveCommand
 import org.kanelucky.server.commands.defaults.HelpCommand
 import org.kanelucky.server.commands.defaults.KillCommand
 import org.kanelucky.server.commands.defaults.OpCommand
@@ -37,9 +40,10 @@ object CommandRegistry {
                 OpCommand(),
                 KillCommand(),
                 HelpCommand(),
-                StatusCommand()
+                StatusCommand(),
+                GiveCommand()
             )
-            .argument(GameMode::class.java, GameModeArgument())
+            .also { ArgumentRegistry.register(it) }
             .invalidUsage(CommandInvalidUsageHandler())
             .missingPermission(PermissionsHandler())
             .build()

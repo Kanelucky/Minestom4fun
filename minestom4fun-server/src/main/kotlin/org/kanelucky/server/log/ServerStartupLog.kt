@@ -8,7 +8,7 @@ import org.kanelucky.server.config.ConfigManager
  */
 object ServerStartupLog {
 
-    private val startTime = System.currentTimeMillis()
+    private var startTime = 0L
 
     fun print() {
         val logger = MinecraftServer.LOGGER
@@ -19,6 +19,10 @@ object ServerStartupLog {
         logger.info("Default game type: SURVIVAL")
         logger.info("Starting Minecraft server on ${cfg.address}:${cfg.port}")
         logger.info("Preparing level \"world\"")
+    }
+
+    fun start() {
+        startTime = System.currentTimeMillis()
     }
 
     fun done() {

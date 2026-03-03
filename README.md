@@ -33,6 +33,8 @@
     - [x] `/op`
     - [x] `/help`
     - [x] `/status`
+    - [x] `/stop`
+    - [x] `/give`
 - **World**
     - [x] Basic superflat generator and preset
     - [x] World generation *(UNSTABLE)*
@@ -85,3 +87,4 @@ cd Minestom4fun
 ## Credits
 
 - [<img src="https://raw.githubusercontent.com/XDPXI/SwiftMC-Website/refs/heads/main/favicon.png" width="16"/>](https://github.com/XDPXI/SwiftMC) [SwiftMC](https://github.com/XDPXI/SwiftMC)
+- [<img src="https://raw.githubusercontent.com/AllayMC/Allay/master/docs/assets/logo/allay-chan-640x.png" width="16"/>](https://github.com/AllayMC/Allay) [AllayMC](https://github.com/AllayMC/Allay)

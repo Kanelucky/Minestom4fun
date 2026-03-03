@@ -12,8 +12,6 @@ import net.kyori.adventure.text.format.NamedTextColor
 import net.minestom.server.MinecraftServer
 import net.minestom.server.command.CommandSender
 
-import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.COMMAND_DEFAULTS
-
 /**
  * @author Kanelucky
  */
@@ -22,7 +20,7 @@ import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.C
 @Permission("minestom4fun.commands.defaults.version")
 class VersionCommand {
 
-    val version: String = this::class.java.`package`.implementationVersion ?: "dev"
+    val version: String = this::class.java.`package`.implementationVersion ?: " dev"
 
     @Execute
     fun execute(
@@ -32,7 +30,6 @@ class VersionCommand {
         val minestomVersion = MinecraftServer.VERSION_NAME
 
         val msg = Component.text()
-            .append(COMMAND_DEFAULTS)
             .append(Component.text("Minestom4fun ", NamedTextColor.GREEN))
             .append(Component.text("v${version} ", NamedTextColor.GRAY))
             .append(Component.text("(Minestom ${minestomVersion})", NamedTextColor.BLUE))

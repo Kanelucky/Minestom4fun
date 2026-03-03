@@ -41,10 +41,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("com.charleskorn.kaml:kaml:0.61.0")
-    //implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.1")
+    implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.2")
     implementation(files("libs/worldgen-0.1.0.jar"))
     implementation(files("libs/MinestomFluids.jar"))
-    implementation(files("libs/minestom-dashboard-0.1.1.jar"))
 
     compileOnly("net.kyori:adventure-api:4.26.1")
 }

@@ -2,17 +2,21 @@ package org.kanelucky.server.commands.defaults
 
 import dev.rollczi.litecommands.annotations.argument.Arg
 import dev.rollczi.litecommands.annotations.command.Command
-import dev.rollczi.litecommands.annotations.context.Sender
+import dev.rollczi.litecommands.annotations.context.Context
 import dev.rollczi.litecommands.annotations.description.Description
 import dev.rollczi.litecommands.annotations.execute.Execute
 import dev.rollczi.litecommands.annotations.permission.Permission
-
 import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.format.NamedTextColor
+import net.kyori.adventure.text.format.TextDecoration
+
+import net.minestom.server.MinecraftServer
+import net.minestom.server.command.CommandSender
 import net.minestom.server.entity.Player
 
-import org.kanelucky.server.text.prefix.commands.defaults.DefaultCommandPrefix.COMMAND_DEFAULTS
 
+/**
+ * @author Kanelucky
+ */
 @Command(name = "kill")
 @Description("Kills entities (players, mobs, items, etc.)")
 @Permission("minestom4fun.commands.defaults.kill")
@@ -20,32 +24,31 @@ class KillCommand {
 
     @Execute
     fun self(
-        @Sender sender: Player
+        @Context sender: Player
     ) {
         sender.kill()
-
-        val message = Component.text()
-            .append(COMMAND_DEFAULTS)
-            .append(Component.text("Killed ", NamedTextColor.GREEN))
-            .append(Component.text("${sender.username}", NamedTextColor.YELLOW))
-            .build()
-
-        sender.sendMessage(message)
+        val killed = "Killed ${sender.username}"
+        sender.sendMessage("${sender.username} was killed")
+        sender.sendMessage(killed)
+        MinecraftServer.LOGGER.info("${sender.username} was killed")
+        MinecraftServer.LOGGER.info(
+            Component.text()
+                .append(Component.text("[${sender.username}: $killed]").decorate(TextDecoration.ITALIC))
+                .build()
+        )
     }
 
     @Execute
     fun other(
-        @Sender sender: Player,
+        @Context sender: CommandSender,
         @Arg("target") target: Player
     ) {
         target.kill()
-
-        val message = Component.text()
-            .append(COMMAND_DEFAULTS)
-            .append(Component.text("Killed ", NamedTextColor.GREEN))
-            .append(Component.text("${target.username}", NamedTextColor.YELLOW))
-            .build()
-
-        sender.sendMessage(message)
+        val killed = "Killed ${target.username}"
+        val senderName = if (sender is Player) sender.username else "Console"
+        target.sendMessage("${target.username} was killed")
+        target.sendMessage("[$senderName: $killed]")
+        MinecraftServer.LOGGER.info("${target.username} was killed")
+        MinecraftServer.LOGGER.info(killed)
     }
 }

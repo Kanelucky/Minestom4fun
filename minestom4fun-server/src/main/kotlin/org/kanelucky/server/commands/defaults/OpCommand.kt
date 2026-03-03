@@ -30,7 +30,6 @@ class OpCommand {
         target.permissionLevel = 4
 
         val msgSender = Component.text()
-            .append(COMMAND_DEFAULTS)
             .append(Component.text("Make ", NamedTextColor.GREEN))
             .append(Component.text("${target.username}", NamedTextColor.YELLOW))
             .append(Component.text(" OP", NamedTextColor.GREEN))

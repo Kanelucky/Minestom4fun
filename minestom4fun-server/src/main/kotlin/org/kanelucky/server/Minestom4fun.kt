@@ -11,6 +11,7 @@ import net.minestom.server.coordinate.Pos
 import net.minestom.server.event.GlobalEventHandler
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.LightingChunk
+import net.minestom.server.utils.time.TimeUnit
 
 import org.kanelucky.gui.Dashboard
 
@@ -19,6 +20,9 @@ import org.kanelucky.server.config.ConfigManager
 import org.kanelucky.server.config.ConfigManager.serverSettings
 import org.kanelucky.server.config.world.WorldType
 import org.kanelucky.server.entity.ai.EntityAI
+import org.kanelucky.server.entity.passive.EntityChicken
+import org.kanelucky.server.entity.passive.EntityCow
+import org.kanelucky.server.entity.passive.EntityPig
 import org.kanelucky.server.entity.passive.EntitySheep
 import org.kanelucky.server.events.EventRegistry
 import org.kanelucky.server.log.ServerStartupLog
@@ -33,6 +37,7 @@ import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.Bottomless
 import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.ClassicFlat
 import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.SnowyKingdom
 import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.Void
+import org.kanelucky.server.world.spawners.NaturalSpawnManager
 
 import java.nio.file.Files
 import java.nio.file.Path
@@ -119,9 +124,12 @@ object Minestom4fun {
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
 
-        val sheep = EntitySheep()
-        sheep.setInstance(instanceContainer, Pos(5.0, 65.0, 5.0))
-        EntityAI.enableDebug(EntityAI.DebugOption.CONTROLLER)
+        MinecraftServer.getSchedulerManager().buildTask {
+            MinecraftServer.getInstanceManager().instances.forEach { instance ->
+                NaturalSpawnManager.tick(instance)
+            }
+        }.repeat(1, TimeUnit.SERVER_TICK).schedule()
+
 
         dashboard.afterServerStarted()
 

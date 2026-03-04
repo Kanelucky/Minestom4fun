@@ -44,16 +44,13 @@ class BehaviorGroup(
 
     fun tick() {
         val entity = entity ?: run {
-            MinecraftServer.LOGGER.info("[AI] entity is null!")
             return
         }
-        MinecraftServer.LOGGER.info("[AI] ticking behaviors, count=${behaviors.size}")
         collectSensorData(entity)
         evaluateCoreBehaviors(entity)
         evaluateBehaviors(entity)
         tickRunning(entity, runningCoreBehaviors)
         tickRunning(entity, runningBehaviors)
-        MinecraftServer.LOGGER.info("[AI] running behaviors: ${runningBehaviors.size}, move target: ${memoryStorage.get(MemoryTypes.MOVE_TARGET)}")
         controllers.forEach { it.control(entity) }
     }
 
@@ -92,12 +89,9 @@ class BehaviorGroup(
             val counter = (behaviorCounters[behavior] ?: 0) + 1
             behaviorCounters[behavior] = if (counter < behavior.period) counter else 0
 
-            MinecraftServer.LOGGER.info("[AI] behavior counter=$counter period=${behavior.period}")
-
             if (counter < behavior.period) continue
 
             val result = behavior.evaluate(entity)
-            MinecraftServer.LOGGER.info("[AI] behavior evaluated=$result")
 
             if (!result) continue
             when {

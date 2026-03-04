@@ -1,9 +1,15 @@
 package org.kanelucky.server.entity.passive
 
+import net.kyori.adventure.sound.Sound
+
 import net.minestom.server.entity.EntityType
+import net.minestom.server.entity.damage.Damage
 import net.minestom.server.item.ItemStack
 import net.minestom.server.item.Material
+import net.minestom.server.sound.SoundEvent
+
 import org.kanelucky.server.entity.IntelligentEntity
+import org.kanelucky.server.entity.ai.memory.MemoryTypes
 
 /**
  * Base class for breedable animals.
@@ -13,28 +19,30 @@ import org.kanelucky.server.entity.IntelligentEntity
 abstract class AnimalEntity(entityType: EntityType) : IntelligentEntity(entityType) {
 
     var isBaby: Boolean = false
-        set(value) {
-            field = value
-            if (value) {
-                setBoundingBox(boundingBox.expand(-0.5, -0.5, -0.5))
-            } else {
-                setBoundingBox(boundingBox)
-            }
-        }
-
     var ageTicks: Int = 0
-
     var breedCooldown: Int = 0
 
     abstract val breedingItems: Set<Material>
+    abstract fun createOffspring(): AnimalEntity
 
-    fun isBreedingItem(item: ItemStack): Boolean {
-        return item.material() in breedingItems
+    fun isBreedingItem(item: ItemStack) = item.material() in breedingItems
+
+    override fun damage(damage: Damage): Boolean {
+        val result = super.damage(damage)
+        if (result) {
+            instance?.playSound(
+                Sound.sound(getHurtSound(), Sound.Source.NEUTRAL, 1f, 1f),
+                position
+            )
+            behaviorGroup.memoryStorage.set(MemoryTypes.PANIC_TICKS, 100)
+        }
+        return result
     }
+
+    abstract fun getHurtSound(): SoundEvent
 
     override fun update(time: Long) {
         super.update(time)
-
         if (isBaby) {
             ageTicks++
             if (ageTicks >= 24000) {
@@ -42,9 +50,6 @@ abstract class AnimalEntity(entityType: EntityType) : IntelligentEntity(entityTy
                 ageTicks = 0
             }
         }
-
-        if (breedCooldown > 0) {
-            breedCooldown--
-        }
+        if (breedCooldown > 0) breedCooldown--
     }
 }

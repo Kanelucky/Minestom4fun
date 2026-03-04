@@ -18,7 +18,7 @@ import org.kanelucky.server.entity.ai.memory.MemoryType
  */
 class FollowEntityExecutor(
     private val entityMemory: MemoryType<Player>,
-    private val speed: Double = 0.3,
+    private val speed: Double = 0.125,
     private val maxRangeSq: Double = 256.0,
     private val minRangeSq: Double = 4.0
 ) : BehaviorExecutor {

@@ -11,6 +11,7 @@ import net.kyori.adventure.text.format.NamedTextColor
 
 import net.minestom.server.MinecraftServer
 import net.minestom.server.command.CommandSender
+import net.minestom.server.entity.Player
 
 /**
  * @author Kanelucky
@@ -35,6 +36,9 @@ class VersionCommand {
             .append(Component.text("(Minestom ${minestomVersion})", NamedTextColor.BLUE))
             .build()
 
-        sender.sendMessage(msg)
+        if (sender is Player) {
+            sender.sendMessage(msg)
+        }
+        MinecraftServer.LOGGER.info(msg)
     }
 }

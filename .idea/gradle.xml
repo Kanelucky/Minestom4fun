@@ -9,7 +9,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/minestom4fun-api" />
+            <option value="$PROJECT_DIR$/minestom4fun-api/java" />
+            <option value="$PROJECT_DIR$/minestom4fun-api/python" />
+            <option value="$PROJECT_DIR$/minestom4fun-config" />
+            <option value="$PROJECT_DIR$/minestom4fun-entity" />
+            <option value="$PROJECT_DIR$/minestom4fun-fluid" />
             <option value="$PROJECT_DIR$/minestom4fun-server" />
+            <option value="$PROJECT_DIR$/minestom4fun-world" />
           </set>
         </option>
       </GradleProjectSettings>

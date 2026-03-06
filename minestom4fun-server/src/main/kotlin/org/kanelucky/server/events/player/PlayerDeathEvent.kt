@@ -8,8 +8,6 @@ import net.minestom.server.event.Event
 import net.minestom.server.event.EventNode
 import net.minestom.server.event.player.PlayerDeathEvent
 
-import org.kanelucky.server.text.prefix.events.player.PlayerEventPrefix
-
 /**
  * @author Kanelucky
  */
@@ -69,7 +67,6 @@ object PlayerDeathEvent {
             }
 
             val msg = Component.text()
-                .append(PlayerEventPrefix.EVENT_PLAYER)
                 .append(Component.text("$message"))
                 .build()
 

@@ -16,7 +16,6 @@ object PlayerJoinEvent {
 
                 val player = event.player
                 val msg = Component.text()
-                    .append(ServerEventPrefix.EVENT_SERVER)
                     .append(Component.text(player.username))
                     .append(Component.text(" joined the game"))
                     .build()

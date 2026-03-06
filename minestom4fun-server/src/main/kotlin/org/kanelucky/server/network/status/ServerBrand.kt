@@ -2,8 +2,7 @@ package org.kanelucky.server.network.status
 
 import net.minestom.server.MinecraftServer
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent
-
-import org.kanelucky.server.config.ConfigManager
+import org.kanelucky.config.ConfigManager
 
 /**
  * @author Kanelucky

@@ -12,8 +12,8 @@ import net.kyori.adventure.text.format.NamedTextColor
 import net.minestom.server.MinecraftServer
 import net.minestom.server.command.CommandSender
 import net.minestom.server.utils.time.Tick
+import org.kanelucky.config.ConfigManager
 
-import org.kanelucky.server.config.ConfigManager
 
 /**
  * @author Kanelucky

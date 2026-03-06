@@ -19,7 +19,6 @@ object PlayerQuitEvent {
                 val player: Player = event.player
 
                 val msg = Component.text()
-                    .append(ServerEventPrefix.EVENT_SERVER)
                     .append(Component.text(player.username))
                     .append(Component.text(" left the game"))
                     .build()

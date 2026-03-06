@@ -32,7 +32,6 @@ dependencies {
     implementation("org.snakeyaml:snakeyaml-engine:2.7")
     implementation("com.formdev:flatlaf:3.4")
 
-
     implementation("net.minestom:minestom:2026.02.09-1.21.11")
     implementation("io.github.togar2:MinestomPvP:2025.12.29-1.21.11")
     implementation("dev.hollowcube:polar:1.15.0")
@@ -42,6 +41,15 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("com.charleskorn.kaml:kaml:0.61.0")
     implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.2")
+    implementation(project(":minestom4fun-world"))
+    implementation(project(":minestom4fun-fluid"))
+    implementation(project(":minestom4fun-api:java"))
+    implementation(project(":minestom4fun-config"))
+    implementation("eu.okaeri:okaeri-configs-yaml-snakeyaml:6.1.0-beta.1")
+    implementation("eu.okaeri:okaeri-configs-serdes-commons:6.1.0-beta.1")
+    implementation("org.jline:jline:3.26.1")
+    implementation("net.java.dev.jna:jna:5.14.0")
+    implementation("org.fusesource.jansi:jansi:2.4.1")
     implementation(files("libs/worldgen-0.1.0.jar"))
     implementation(files("libs/MinestomFluids.jar"))
 

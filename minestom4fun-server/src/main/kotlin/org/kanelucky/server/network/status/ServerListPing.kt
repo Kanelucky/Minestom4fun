@@ -6,7 +6,7 @@ import net.kyori.adventure.text.format.NamedTextColor
 import net.minestom.server.MinecraftServer
 import net.minestom.server.event.server.ServerListPingEvent
 import net.minestom.server.ping.Status
-import org.kanelucky.server.config.ConfigManager
+import org.kanelucky.config.ConfigManager
 
 /**
  * @author Kanelucky

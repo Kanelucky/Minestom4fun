@@ -1,7 +1,7 @@
 package org.kanelucky.server.log
 
 import net.minestom.server.MinecraftServer
-import org.kanelucky.server.config.ConfigManager
+import org.kanelucky.config.ConfigManager
 
 /**
  * @author Kanelucky

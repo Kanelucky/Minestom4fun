@@ -1,43 +1,36 @@
 package org.kanelucky.server
 
-import io.github.togar2.fluids.MinestomFluids
 import io.github.togar2.pvp.MinestomPvP
 import io.github.togar2.pvp.feature.CombatFeatures
 
 import net.hollowcube.polar.PolarLoader
 
 import net.minestom.server.MinecraftServer
-import net.minestom.server.coordinate.Pos
 import net.minestom.server.event.GlobalEventHandler
 import net.minestom.server.instance.InstanceContainer
 import net.minestom.server.instance.LightingChunk
 import net.minestom.server.utils.time.TimeUnit
+import org.kanelucky.config.ConfigManager
+import org.kanelucky.config.ConfigManager.serverSettings
+import org.kanelucky.config.world.WorldType
+import org.kanelucky.fluid.MinestomFluids
 
 import org.kanelucky.gui.Dashboard
 
 import org.kanelucky.server.commands.CommandRegistry
-import org.kanelucky.server.config.ConfigManager
-import org.kanelucky.server.config.ConfigManager.serverSettings
-import org.kanelucky.server.config.world.WorldType
-import org.kanelucky.server.entity.ai.EntityAI
-import org.kanelucky.server.entity.passive.EntityChicken
-import org.kanelucky.server.entity.passive.EntityCow
-import org.kanelucky.server.entity.passive.EntityPig
-import org.kanelucky.server.entity.passive.EntitySheep
 import org.kanelucky.server.events.EventRegistry
 import org.kanelucky.server.log.ServerStartupLog
 import org.kanelucky.server.network.NetworkRegistry
-import org.kanelucky.server.terminal.ServerTerminalConsole
-import org.kanelucky.server.world.blocks.WorldBlockRegistry
-import org.kanelucky.server.world.generator.NormalGenerator
-import org.kanelucky.server.world.fluid.FluidEventHandler
-import org.kanelucky.server.world.generator.OverworldGenerator
-import org.kanelucky.server.world.generator.SuperFlatGenerator.SuperFlatGenerator
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.BottomlessPit
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.ClassicFlat
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.SnowyKingdom
-import org.kanelucky.server.world.generator.SuperFlatGenerator.preset.Void
-import org.kanelucky.server.world.spawners.NaturalSpawnManager
+import org.kanelucky.server.terminal.TerminalReader
+import org.kanelucky.world.blocks.WorldBlockRegistry
+
+import org.kanelucky.world.generator.NormalGenerator
+import org.kanelucky.world.generator.SuperFlatGenerator.SuperFlatGenerator
+import org.kanelucky.world.generator.SuperFlatGenerator.preset.BottomlessPit
+import org.kanelucky.world.generator.SuperFlatGenerator.preset.ClassicFlat
+import org.kanelucky.world.generator.SuperFlatGenerator.preset.SnowyKingdom
+import org.kanelucky.world.generator.SuperFlatGenerator.preset.Void
+import org.kanelucky.world.spawners.NaturalSpawnManager
 
 import java.nio.file.Files
 import java.nio.file.Path
@@ -98,9 +91,9 @@ object Minestom4fun {
         // Register events
         EventRegistry.register(handler = globalEventHandler)
 
-        MinestomFluids.init()
-        FluidEventHandler.register(globalEventHandler)
-        MinecraftServer.getGlobalEventHandler().addChild(MinestomFluids.events())
+        MinestomFluids.enableFluids()
+        MinestomFluids.enableVanillaFluids()
+        MinestomFluids.enableAutoIngestion()
 
         // Register commands
         CommandRegistry.initialize()
@@ -116,11 +109,7 @@ object Minestom4fun {
         // Saving world
         instanceContainer.saveChunksToStorage()
 
-        val commandManager = MinecraftServer.getCommandManager()
-        val dispatcher = commandManager.dispatcher
-        val console = commandManager.consoleSender
-
-        ServerTerminalConsole().startConsole(dispatcher, console)
+        TerminalReader.start(MinecraftServer.getCommandManager())
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
 
@@ -129,7 +118,6 @@ object Minestom4fun {
                 NaturalSpawnManager.tick(instance)
             }
         }.repeat(1, TimeUnit.SERVER_TICK).schedule()
-
 
         dashboard.afterServerStarted()
 

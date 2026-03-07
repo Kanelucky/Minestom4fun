@@ -12,10 +12,6 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.40")
 }
 
-tasks.jar {
-    enabled = false
-}
-
 tasks.test {
     useJUnitPlatform()
 }

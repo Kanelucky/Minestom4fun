@@ -1,5 +1,6 @@
 package org.kanelucky.world.spawners
 
+import net.minestom.server.MinecraftServer
 import net.minestom.server.coordinate.Pos
 import net.minestom.server.entity.EntityCreature
 import net.minestom.server.instance.Instance
@@ -39,21 +40,21 @@ object NaturalSpawnManager {
     }
 
     private fun trySpawnNear(instance: Instance, center: Pos, slotsLeft: Int) {
-        repeat(MAX_SPAWN_ATTEMPTS) {
-            val rule = pickRule() ?: return
+        repeat(MAX_SPAWN_ATTEMPTS) attempt@{
+            val rule = pickRule() ?: return@attempt
 
             val angle = Random.nextDouble() * 2 * Math.PI
             val dist = Random.nextInt(MIN_SPAWN_RADIUS, SPAWN_RADIUS + 1).toDouble()
             val spawnX = center.x() + dist * cos(angle)
             val spawnZ = center.z() + dist * sin(angle)
-            val spawnY = findGroundY(instance, spawnX, center.y(), spawnZ) ?: return@repeat
+            val spawnY = findGroundY(instance, spawnX, center.y(), spawnZ) ?: return@attempt
 
             val spawnPos = Pos(spawnX, spawnY, spawnZ)
-            if (!rule.canSpawn(instance, spawnPos)) return@repeat
+            if (!rule.canSpawn(instance, spawnPos)) return@attempt
 
             val groupSize = Random.nextInt(rule.minGroupSize, rule.maxGroupSize + 1)
                 .coerceAtMost(slotsLeft)
-            if (groupSize <= 0) return
+            if (groupSize <= 0) return@attempt
 
             repeat(groupSize) {
                 val offsetX = spawnX + Random.nextDouble(-4.0, 4.0)
@@ -68,13 +69,14 @@ object NaturalSpawnManager {
 
                 rule.createEntity().setInstance(instance, pos)
             }
-            return
         }
     }
 
     private fun pickRule(): SpawnRule? {
         val rules = SpawnRuleRegistry.all.filterNotNull()
-        if (rules.isEmpty()) return null
+        if (rules.isEmpty()) {
+            return null
+        }
         val totalWeight = rules.sumOf { it.weight }
         var random = Random.nextInt(totalWeight)
         for (rule in rules) {

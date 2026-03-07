@@ -22,6 +22,7 @@ import org.kanelucky.server.events.EventRegistry
 import org.kanelucky.server.log.ServerStartupLog
 import org.kanelucky.server.network.NetworkRegistry
 import org.kanelucky.server.terminal.TerminalReader
+import org.kanelucky.server.world.spawner.DefaultSpawnRules
 import org.kanelucky.world.blocks.WorldBlockRegistry
 
 import org.kanelucky.world.generator.NormalGenerator
@@ -112,6 +113,8 @@ object Minestom4fun {
         TerminalReader.start(MinecraftServer.getCommandManager())
 
         minecraftServer.start(serverSettings.address, serverSettings.port)
+
+        DefaultSpawnRules.initialize()
 
         MinecraftServer.getSchedulerManager().buildTask {
             MinecraftServer.getInstanceManager().instances.forEach { instance ->

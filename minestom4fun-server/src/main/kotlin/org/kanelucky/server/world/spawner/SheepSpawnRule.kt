@@ -4,9 +4,10 @@ import net.minestom.server.coordinate.Point
 import net.minestom.server.instance.Instance
 import net.minestom.server.registry.RegistryKey
 import net.minestom.server.world.biome.Biome
+
 import org.kanelucky.api.java.world.spawner.SpawnRule
-import org.kanelucky.server.entity.passive.EntityChicken
-import org.kanelucky.server.entity.passive.EntitySheep
+
+import org.kanelucky.entity.passive.EntitySheep
 
 /**
  * @author Kanelucky

@@ -42,6 +42,7 @@ dependencies {
     implementation("com.charleskorn.kaml:kaml:0.61.0")
     implementation("com.github.Kanelucky:Minestom-Dashboard:v0.1.2")
     implementation(project(":minestom4fun-world"))
+    implementation(project(":minestom4fun-entity"))
     implementation(project(":minestom4fun-fluid"))
     implementation(project(":minestom4fun-api:java"))
     implementation(project(":minestom4fun-config"))

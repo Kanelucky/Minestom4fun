@@ -7,6 +7,10 @@ group = "org.kanelucky"
 description = "minestom4fun-world"
 version = "0.1.3"
 
+kotlin {
+    jvmToolchain(25)
+}
+
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.snakeyaml:snakeyaml-engine:2.7")
@@ -30,8 +34,4 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(25))
     }
-}
-
-kotlin {
-    jvmToolchain(25)
 }

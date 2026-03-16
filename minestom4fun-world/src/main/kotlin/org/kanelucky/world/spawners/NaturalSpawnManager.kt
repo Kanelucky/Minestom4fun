@@ -18,7 +18,7 @@ import kotlin.random.Random
  */
 object NaturalSpawnManager {
 
-    private const val SPAWN_RADIUS = 48
+    private const val SPAWN_RADIUS = 128
     private const val MIN_SPAWN_RADIUS = 24
     private const val PASSIVE_MOB_CAP_PER_PLAYER = 10
     private const val SPAWN_INTERVAL_TICKS = 400

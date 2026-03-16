@@ -26,7 +26,7 @@ object ConfigManager {
 
         serverSettings = load("server/server-settings.yml")
         networkSettings = load("network/network-settings.yml")
-        worldSettings = load("worlds/world-settings.yml")
+        worldSettings = load("world/world-settings.yml")
     }
 
     private inline fun <reified T : OkaeriConfig> load(path: String): T {

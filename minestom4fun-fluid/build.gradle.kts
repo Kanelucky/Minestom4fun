@@ -6,6 +6,10 @@ group = "org.kanelucky"
 description = "minestom4fun-fluid"
 version = "0.1.3"
 
+kotlin {
+    jvmToolchain(25)
+}
+
 dependencies {
     implementation("net.minestom:minestom:2026.02.09-1.21.11")
     implementation(project(":minestom4fun-api:java"))

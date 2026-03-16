@@ -2,6 +2,7 @@ package org.kanelucky.server.events
 
 import net.minestom.server.event.GlobalEventHandler
 
+import org.kanelucky.server.events.player.PlayerChatEvent
 import org.kanelucky.server.events.server.PlayerJoinEvent
 import org.kanelucky.server.events.server.PlayerQuitEvent
 import org.kanelucky.server.events.server.PlayerSpawnEvent
@@ -15,5 +16,6 @@ object GlobalEventsRegistry {
         PlayerJoinEvent.register()
         PlayerQuitEvent.register()
         PlayerSpawnEvent.register()
+        PlayerChatEvent.register()
     }
 }

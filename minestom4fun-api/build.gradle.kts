@@ -6,6 +6,10 @@ group = "org.kanelucky"
 description = "minestom4fun-api"
 version = "0.1.3"
 
+kotlin {
+    jvmToolchain(25)
+}
+
 dependencies {
     testImplementation(kotlin("test"))
 }

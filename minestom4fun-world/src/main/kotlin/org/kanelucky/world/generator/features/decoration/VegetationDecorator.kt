@@ -71,7 +71,7 @@ class VegetationDecorator {
                 val vegetationY = surfaceY + 1
 
                 if (Random.Default.nextFloat() < TREE_CHANCE) {
-                    TreeGenerator.tryGenerate(unit, x, vegetationY, z, Block.GRASS_BLOCK)
+                    TreeGenerator.generateOak(unit, x, vegetationY, z, Random.Default)
                     continue
                 }
 

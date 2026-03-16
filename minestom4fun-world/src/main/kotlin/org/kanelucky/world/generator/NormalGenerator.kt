@@ -17,6 +17,7 @@ import org.kanelucky.world.generator.noise.FastNoise
 import org.kanelucky.config.world.noise.NoiseConfig
 import org.kanelucky.world.generator.terrain.CaveCarver
 import org.kanelucky.world.generator.terrain.RiverCarver
+import kotlin.random.asKotlinRandom
 
 
 class NormalGenerator : Generator {
@@ -26,6 +27,8 @@ class NormalGenerator : Generator {
     private val seagrass = SeagrassDecorator()
     private val caveCarver = CaveCarver()
     private val riverCarver = RiverCarver(noise)
+
+    private val random = java.util.Random(NoiseConfig.seed)
 
     override fun generate(unit: GenerationUnit) {
 
@@ -61,7 +64,6 @@ class NormalGenerator : Generator {
 
         for (x in 0..15) {
             for (z in 0..15) {
-
                 val wx = baseX + x
                 val wz = baseZ + z
                 val height = heights[x][z]
@@ -72,6 +74,12 @@ class NormalGenerator : Generator {
                         modifier.setBlock(wx, y, wz, block)
                 }
 
+                if (height > WATER_LEVEL) {
+                    val groundBlock = getBlock(height - 1, height, heights, x, z)
+                    if (groundBlock == Block.GRASS_BLOCK) {
+                        treePositions.add(Triple(wx, height, wz) to groundBlock)
+                    }
+                }
             }
         }
 
@@ -82,7 +90,9 @@ class NormalGenerator : Generator {
         seagrass.decorate(unit, heights, baseX, baseZ)
 
         treePositions.forEach { (pos, groundBlock) ->
-            TreeGenerator.tryGenerate(unit, pos.first, pos.second, pos.third, groundBlock)
+            if (random.nextInt(20) == 0) {
+                TreeGenerator.generateOak(unit, pos.first, pos.second, pos.third, random.asKotlinRandom())
+            }
         }
 
         vegetation.decorate(unit, heights, baseX, baseZ)

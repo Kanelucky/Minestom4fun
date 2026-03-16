@@ -8,6 +8,7 @@ plugins {
 }
 
 group = "org.kanelucky"
+description = "minestom4fun-server"
 version = "0.1.3"
 
 fun getShortGitHash(): String {
@@ -83,7 +84,7 @@ tasks {
     shadowJar {
         mergeServiceFiles()
         archiveFileName.set(
-            "minestom4fun-server-${project.version}-${getShortGitHash()}-shaded.jar"
+            "${project.description}-${project.version}-${getShortGitHash()}-shaded.jar"
         )
     }
 

@@ -13,8 +13,8 @@ import org.kanelucky.entity.passive.EntityChicken
  */
 object ChickenSpawnRule : SpawnRule {
     override fun getWeight() = 10
-    override fun getMinGroupSize() = 2
-    override fun getMaxGroupSize() = 4
+    override fun getMinGroupSize() = 4
+    override fun getMaxGroupSize() = 8
     override fun getValidBiomes(): Set<RegistryKey<Biome>> = setOf(
         Biome.PLAINS, Biome.FOREST, Biome.MEADOW,
         Biome.TAIGA, Biome.SAVANNA, Biome.SAVANNA_PLATEAU

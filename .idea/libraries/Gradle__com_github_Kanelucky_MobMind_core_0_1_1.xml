@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.Kanelucky.MobMind:core:0.1.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.github.Kanelucky.MobMind" artifactId="core" version="0.1.1" baseVersion="0.1.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.Kanelucky.MobMind/core/0.1.1/2c3b55b274f2f5fa291b79a6b87b5f3f1d82dec8/core-0.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

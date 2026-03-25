@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: de.articdive:jnoise-modifiers:4.1.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="de.articdive" artifactId="jnoise-modifiers" version="4.1.0" baseVersion="4.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.articdive/jnoise-modifiers/4.1.0/46cd2452385d95f1830eefc172cbf577617cb3f5/jnoise-modifiers-4.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

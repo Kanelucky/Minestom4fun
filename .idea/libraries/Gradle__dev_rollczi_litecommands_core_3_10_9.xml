@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.rollczi:litecommands-core:3.10.9" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="dev.rollczi" artifactId="litecommands-core" version="3.10.9" baseVersion="3.10.9" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.rollczi/litecommands-core/3.10.9/d1c87aba6212bc4301cf4a83fd69b6e54c81e91b/litecommands-core-3.10.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.rollczi/litecommands-core/3.10.9/bbaa9dfdb93567fd735ce851c28b44f57320adae/litecommands-core-3.10.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

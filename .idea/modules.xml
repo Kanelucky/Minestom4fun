@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Minestom4fun.iml" filepath="$PROJECT_DIR$/.idea/modules/Minestom4fun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Minestom4fun.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Minestom4fun.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/Minestom4fun.minestom4fun-api.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/Minestom4fun.minestom4fun-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/java/Minestom4fun.minestom4fun-api.java.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/java/Minestom4fun.minestom4fun-api.java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/java/Minestom4fun.minestom4fun-api.java.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/java/Minestom4fun.minestom4fun-api.java.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/java/Minestom4fun.minestom4fun-api.java.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/java/Minestom4fun.minestom4fun-api.java.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/Minestom4fun.minestom4fun-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/Minestom4fun.minestom4fun-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/python/Minestom4fun.minestom4fun-api.python.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/python/Minestom4fun.minestom4fun-api.python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-api/Minestom4fun.minestom4fun-api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-api/Minestom4fun.minestom4fun-api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-config/Minestom4fun.minestom4fun-config.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-config/Minestom4fun.minestom4fun-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-config/Minestom4fun.minestom4fun-config.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-config/Minestom4fun.minestom4fun-config.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-config/Minestom4fun.minestom4fun-config.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-config/Minestom4fun.minestom4fun-config.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-entity/Minestom4fun.minestom4fun-entity.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-entity/Minestom4fun.minestom4fun-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-entity/Minestom4fun.minestom4fun-entity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-entity/Minestom4fun.minestom4fun-entity.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-entity/Minestom4fun.minestom4fun-entity.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-entity/Minestom4fun.minestom4fun-entity.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-fluid/Minestom4fun.minestom4fun-fluid.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-fluid/Minestom4fun.minestom4fun-fluid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-fluid/Minestom4fun.minestom4fun-fluid.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-fluid/Minestom4fun.minestom4fun-fluid.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-fluid/Minestom4fun.minestom4fun-fluid.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-fluid/Minestom4fun.minestom4fun-fluid.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-server/Minestom4fun.minestom4fun-server.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-server/Minestom4fun.minestom4fun-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-server/Minestom4fun.minestom4fun-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-server/Minestom4fun.minestom4fun-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-server/Minestom4fun.minestom4fun-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-server/Minestom4fun.minestom4fun-server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-world/Minestom4fun.minestom4fun-world.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-world/Minestom4fun.minestom4fun-world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-world/Minestom4fun.minestom4fun-world.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-world/Minestom4fun.minestom4fun-world.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minestom4fun-world/Minestom4fun.minestom4fun-world.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minestom4fun-world/Minestom4fun.minestom4fun-world.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Minestom4fun.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Minestom4fun.test.iml" />
+    </modules>
+  </component>
+</project>

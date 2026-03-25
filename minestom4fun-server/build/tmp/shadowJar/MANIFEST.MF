@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: org.kanelucky.server.Minestom4fun
+Implementation-Title: Minestom4fun
+Implementation-Version: 0.1.3
+Git-Commit: 505b249
+Multi-Release: true
+

@@ -1,0 +1,6 @@
+# Server bind address
+address: 0.0.0.0
+# Server port
+port: 25565
+# Maximum number of players
+maxPlayers: 20

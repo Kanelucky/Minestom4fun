@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.rollczi:litecommands-programmatic:3.10.9" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="dev.rollczi" artifactId="litecommands-programmatic" version="3.10.9" baseVersion="3.10.9" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.rollczi/litecommands-programmatic/3.10.9/caaf3e5e2a63516a27912c487568ee74a8a12974/litecommands-programmatic-3.10.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

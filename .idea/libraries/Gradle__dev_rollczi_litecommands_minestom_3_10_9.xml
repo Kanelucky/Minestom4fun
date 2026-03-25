@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: dev.rollczi:litecommands-minestom:3.10.9" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="dev.rollczi" artifactId="litecommands-minestom" version="3.10.9" baseVersion="3.10.9" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.rollczi/litecommands-minestom/3.10.9/c9bdf45d0d154108b8862798721ea6939c95e07c/litecommands-minestom-3.10.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

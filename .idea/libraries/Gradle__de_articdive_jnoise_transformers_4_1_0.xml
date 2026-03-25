@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: de.articdive:jnoise-transformers:4.1.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="de.articdive" artifactId="jnoise-transformers" version="4.1.0" baseVersion="4.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.articdive/jnoise-transformers/4.1.0/53530fe8b614be4ccda97119f5e356dacfa24c50/jnoise-transformers-4.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

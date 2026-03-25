@@ -1,0 +1,8 @@
+# World type: NORMAL or SUPERFLAT
+worldType: NORMAL
+# World generation seed
+seed: 1234567890
+# Superflat configuration
+superflat:
+  # Available presets: classic, bottomless_pit, snowy_kingdom, void
+  preset: classic

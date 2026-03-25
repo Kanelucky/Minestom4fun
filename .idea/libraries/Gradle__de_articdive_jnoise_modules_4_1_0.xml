@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: de.articdive:jnoise-modules:4.1.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="de.articdive" artifactId="jnoise-modules" version="4.1.0" baseVersion="4.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.articdive/jnoise-modules/4.1.0/5b36dab84fad68c9956e4961c8d62ecb7ec69c29/jnoise-modules-4.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

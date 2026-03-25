@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: de.articdive:jnoise-core:4.1.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="de.articdive" artifactId="jnoise-core" version="4.1.0" baseVersion="4.1.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.articdive/jnoise-core/4.1.0/d631bc94d1326af85dae43f65f0e240c6bc1a15/jnoise-core-4.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

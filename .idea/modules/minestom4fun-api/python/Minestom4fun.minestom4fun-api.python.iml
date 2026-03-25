@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":minestom4fun-api:python" external.linked.project.path="$MODULE_DIR$/../../../../minestom4fun-api/python" external.root.project.path="$MODULE_DIR$/../../../.." external.system.id="GRADLE" external.system.module.group="Minestom4fun.minestom4fun-api" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../minestom4fun-api/python">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../minestom4fun-api/python/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../minestom4fun-api/python/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
